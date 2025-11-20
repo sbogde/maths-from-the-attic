@@ -1,0 +1,254 @@
+/* Style for LaTeX-generated website */
+
+:root {
+  --primary-color: #2c3e50;
+  --accent-color: #3498db;
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --code-bg: #f5f5f5;
+  --border-color: #e1e4e8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Georgia", "Times New Roman", serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Header and Navigation */
+header {
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  color: var(--primary-color);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+header .author {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+header .date {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+/* Table of Contents */
+#TOC {
+  background-color: var(--code-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+#TOC ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+#TOC > ul > li {
+  margin-bottom: 0.8rem;
+}
+
+#TOC ul ul {
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+#TOC a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+#TOC a:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--primary-color);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: 2rem;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.3rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+}
+
+/* Paragraphs and Text */
+p {
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+/* Math */
+.math {
+  overflow-x: auto;
+}
+
+.math.display {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+/* Theorems, Definitions, etc. */
+.theorem,
+.lemma,
+.proposition,
+.corollary,
+.definition,
+.example,
+.remark {
+  background-color: var(--code-bg);
+  border-left: 4px solid var(--accent-color);
+  padding: 1rem;
+  margin: 1.5rem 0;
+  border-radius: 3px;
+}
+
+.definition {
+  border-left-color: #e74c3c;
+}
+
+.example {
+  border-left-color: #27ae60;
+}
+
+.remark {
+  border-left-color: #f39c12;
+}
+
+/* Lists */
+ol,
+ul {
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* Links */
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Code */
+code {
+  background-color: var(--code-bg);
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-family: "Courier New", monospace;
+  font-size: 0.9em;
+}
+
+pre {
+  background-color: var(--code-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+/* Download section */
+.download-section {
+  background-color: #f8f9fa;
+  border: 2px solid var(--accent-color);
+  border-radius: 5px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.download-section a {
+  display: inline-block;
+  background-color: var(--accent-color);
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.download-section a:hover {
+  background-color: var(--primary-color);
+}
+
+/* Footer */
+footer {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+}

@@ -1,0 +1,2020 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Supervisor: Prof. Dr Tiberiu Dumitrescu Student: Sorin Bogde" />
+  <title>The Uniform (Co-Irreducible) Dimension of Rings and Modules</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="style.css" />
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">The Uniform (Co-Irreducible) Dimension of Rings and
+Modules</h1>
+<p class="author">Supervisor: Prof. Dr Tiberiu Dumitrescu<br />
+Student: Sorin Bogde</p>
+<p class="date">Original thesis: University of Bucharest, Faculty of
+Mathematics, 1999<br />
+English translation: 2025-11-20</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#generalities" id="toc-generalities">Generalities</a>
+<ul>
+<li><a href="#semisimple-modules" id="toc-semisimple-modules">Semisimple
+modules</a></li>
+<li><a href="#noetherian-artinian-modules-and-noetherian-artinian-rings"
+id="toc-noetherian-artinian-modules-and-noetherian-artinian-rings">Noetherian
+(Artinian) modules and Noetherian (Artinian) rings</a></li>
+<li><a href="#finite-length-modules"
+id="toc-finite-length-modules">Finite length modules</a></li>
+<li><a href="#the-jacobson-radical" id="toc-the-jacobson-radical">The
+Jacobson radical</a></li>
+<li><a href="#semisimple-rings" id="toc-semisimple-rings">Semisimple
+rings</a></li>
+</ul></li>
+<li><a href="#essential-submodules"
+id="toc-essential-submodules">Essential submodules</a></li>
+<li><a href="#injective-modules" id="toc-injective-modules">Injective
+Modules</a>
+<ul>
+<li><a href="#injective-module" id="toc-injective-module">Injective
+Module</a></li>
+<li><a href="#injective-envelopes"
+id="toc-injective-envelopes">Injective envelopes</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="generalities">Generalities</h1>
+<h2 id="semisimple-modules">Semisimple modules</h2>
+<div class="definition">
+<p><strong>Definition 1.1</strong>. A non-zero <span
+class="math inline">\(R\)</span>-module <span
+class="math inline">\(S\)</span> is called <em>simple</em> if its only
+submodules are <span class="math inline">\(0\)</span> and <span
+class="math inline">\(S\)</span>.</p>
+</div>
+<div class="proposition">
+<p><strong>Proposition 1.2</strong>. <em>Let <span
+class="math inline">\(S\)</span> be an <span
+class="math inline">\(R\)</span>-module. The following statements are
+equivalent:</em></p>
+<ol>
+<li><p><em><span class="math inline">\(S\)</span> is
+simple;</em></p></li>
+<li><p><em>for every non-zero element <span class="math inline">\(x \in
+S\)</span> we have <span class="math inline">\(S =
+xR\)</span>;</em></p></li>
+<li><p><em><span class="math inline">\(S \cong R/I\)</span>, where <span
+class="math inline">\(I\)</span> is a maximal right ideal.</em></p></li>
+</ol>
+</div>
+<div class="lemma">
+<p><strong>Lemma 1.3</strong> (Schur). <em>Let <span
+class="math inline">\(S\)</span> and <span
+class="math inline">\(S&#39;\)</span> be simple <span
+class="math inline">\(R\)</span>-modules and let <span
+class="math inline">\(f\colon S \to S&#39;\)</span> be a homomorphism of
+<span class="math inline">\(R\)</span>-modules. Then <span
+class="math inline">\(f = 0\)</span> or <span
+class="math inline">\(f\)</span> is an isomorphism. In particular <span
+class="math inline">\(\mathop{\mathrm{End}}_R(S)\)</span> is a division
+ring.</em></p>
+</div>
+<div class="definition">
+<p><strong>Definition 1.4</strong>. Let <span
+class="math inline">\(M\)</span> be an <span
+class="math inline">\(R\)</span>-module and let <span
+class="math inline">\((S_i)_{i\in I}\)</span> be the family of all
+simple submodules of <span class="math inline">\(M\)</span>. If <span
+class="math inline">\(M = \sum_{i\in I} S_i\)</span>, then <span
+class="math inline">\(M\)</span> is called <em>semisimple</em>.</p>
+</div>
+<div class="proposition">
+<p><strong>Proposition 1.5</strong>. <em>Let <span
+class="math inline">\(M\)</span> be a semisimple <span
+class="math inline">\(R\)</span>-module and <span
+class="math inline">\(N\)</span> a submodule of <span
+class="math inline">\(M\)</span>. Then there exists a subset <span
+class="math inline">\(J \subseteq I\)</span> such that</em></p>
+<ol>
+<li><p><em>the family <span class="math inline">\((S_j)_{j\in
+J}\)</span> is independent;</em></p></li>
+<li><p><em><span class="math inline">\(M = N \oplus
+\bigl(\bigoplus_{j\in J} S_j\bigr)\)</span>.</em></p></li>
+</ol>
+</div>
+<div class="corollary">
+<p><strong>Corollary 1.6</strong>. <em>With the above notation, for the
+semisimple module <span class="math inline">\(M\)</span> there exists
+<span class="math inline">\(J \subseteq I\)</span> such that the family
+<span class="math inline">\((S_j)_{j\in J}\)</span> is independent and
+<span class="math display">\[M = \bigoplus_{i\in I}
+M_i.\]</span></em></p>
+</div>
+<div class="corollary">
+<p><strong>Corollary 1.7</strong>. <em>If <span
+class="math inline">\(M\)</span> is a semisimple <span
+class="math inline">\(R\)</span>-module and <span
+class="math inline">\(N\)</span> a submodule of <span
+class="math inline">\(M\)</span>, then both <span
+class="math inline">\(N\)</span> and <span
+class="math inline">\(M/N\)</span> are semisimple.</em></p>
+</div>
+<div class="corollary">
+<p><strong>Corollary 1.8</strong>. <em>A direct sum of semisimple
+modules is a semisimple module.</em></p>
+</div>
+<div class="theorem">
+<p><strong>Theorem 1.9</strong>. <em>Let <span
+class="math inline">\(M\)</span> be an <span
+class="math inline">\(R\)</span>-module. The following statements are
+equivalent:</em></p>
+<ol>
+<li><p><em><span class="math inline">\(M\)</span> is
+semisimple;</em></p></li>
+<li><p><em><span class="math inline">\(M\)</span> is isomorphic to a
+direct sum of simple modules;</em></p></li>
+<li><p><em>every submodule of <span class="math inline">\(M\)</span> is
+a direct summand of <span
+class="math inline">\(M\)</span>;</em></p></li>
+<li><p><em>every short exact sequence <span class="math display">\[0
+\longrightarrow M&#39; \xrightarrow{\,f\,} M \xrightarrow{\,g\,}
+M&#39;&#39; \longrightarrow 0\]</span> splits.</em></p></li>
+</ol>
+</div>
+<div class="definition">
+<p><strong>Definition 1.10</strong>. The sum of all simple submodules of
+<span class="math inline">\(M\)</span> is called the <em>socle</em> of
+<span class="math inline">\(M\)</span> and is denoted by <span
+class="math inline">\(\mathop{\mathrm{soc}}(M)\)</span>. If <span
+class="math inline">\(M\)</span> has no simple submodule we put <span
+class="math inline">\(\mathop{\mathrm{soc}}(M) = 0\)</span>.</p>
+</div>
+<div class="proposition">
+<p><strong>Proposition 1.11</strong>. <em>Let <span
+class="math inline">\(M\)</span> and <span
+class="math inline">\(N\)</span> be <span
+class="math inline">\(R\)</span>-modules and <span
+class="math inline">\(f\colon M \to N\)</span> a homomorphism. Then
+<span class="math inline">\(f(\mathop{\mathrm{soc}}(M)) \subseteq
+\mathop{\mathrm{soc}}(N)\)</span>.</em></p>
+</div>
+<div class="proposition">
+<p><strong>Proposition 1.12</strong>. <em>Let <span
+class="math inline">\(M\)</span> be an <span
+class="math inline">\(R\)</span>-module and <span
+class="math inline">\(N\)</span> a submodule of <span
+class="math inline">\(M\)</span>. Then <span
+class="math display">\[\mathop{\mathrm{soc}}(N) =
+\mathop{\mathrm{soc}}(M) \cap N.\]</span></em></p>
+</div>
+<div class="proposition">
+<p><strong>Proposition 1.13</strong>. <em>If <span
+class="math inline">\(M = \bigoplus_{i\in I} M_i\)</span>, then <span
+class="math display">\[\mathop{\mathrm{soc}}(M) = \bigoplus_{i\in I}
+\mathop{\mathrm{soc}}(M_i).\]</span></em></p>
+</div>
+<div class="proposition">
+<p><strong>Proposition 1.14</strong>. <em>Let <span
+class="math inline">\(R\)</span> be a ring. Then the socle <span
+class="math inline">\(\mathop{\mathrm{soc}}(R_R)\)</span> is a two-sided
+ideal of <span class="math inline">\(R\)</span>.</em></p>
+</div>
+<h2
+id="noetherian-artinian-modules-and-noetherian-artinian-rings">Noetherian
+(Artinian) modules and Noetherian (Artinian) rings</h2>
+<div class="definition">
+<p><strong>Definition 1.15</strong>. Let <span
+class="math inline">\(R\)</span> be a ring and <span
+class="math inline">\(M\)</span> a right <span
+class="math inline">\(R\)</span>-module. We say that <span
+class="math inline">\(M\)</span> satisfies the <em>maximal
+condition</em> (resp. the <em>minimal condition</em>) if every non-empty
+set of submodules of <span class="math inline">\(M\)</span>, ordered by
+inclusion, has a maximal (resp. minimal) element.</p>
+<p>We say that <span class="math inline">\(M\)</span> satisfies the
+<em>ascending</em> (resp. <em>descending</em>) <em>chain condition</em>
+if every ascending chain of submodules of <span
+class="math inline">\(M\)</span> <span class="math display">\[M_1
+\subseteq M_2 \subseteq \cdots \subseteq M_i \subseteq \cdots\]</span>
+(resp. every descending chain <span class="math display">\[M_1 \supseteq
+M_2 \supseteq \cdots \supseteq M_i \supseteq \cdots\]</span>) is
+stationary, that is, there exists <span class="math inline">\(n \ge
+1\)</span> such that <span class="math inline">\(M_n = M_{n+1} =
+\cdots\)</span>.</p>
+</div>
+<div class="proposition">
+<p><strong>Proposition 1.16</strong>. <em>Let <span
+class="math inline">\(M\)</span> be an <span
+class="math inline">\(R\)</span>-module. The following statements are
+equivalent:</em></p>
+<ol>
+<li><p><em><span class="math inline">\(M\)</span> satisfies the maximal
+(minimal) condition;</em></p></li>
+<li><p><em><span class="math inline">\(M\)</span> satisfies the
+ascending (descending) chain condition.</em></p></li>
+</ol>
+</div>
+<div class="definition">
+<p><strong>Definition 1.17</strong>. An <span
+class="math inline">\(R\)</span>-module <span
+class="math inline">\(M\)</span> is called <em>noetherian</em>
+(resp. <em>artinian</em>) if it satisfies the maximal (resp. minimal)
+condition. The ring <span class="math inline">\(R\)</span> is called
+right noetherian (resp. right artinian) if the right module <span
+class="math inline">\(R_R\)</span> is noetherian (resp. artinian).</p>
+</div>
+<div class="example">
+<p><strong>Example 1.18</strong>. </p>
+<ol>
+<li><p><span class="math inline">\(\mathbb{Z}\)</span> is a noetherian
+ring but not artinian.</p></li>
+<li><p>Every finite group is a noetherian and artinian <span
+class="math inline">\(\mathbb{Z}\)</span>-module.</p></li>
+<li><p>Every finite ring is noetherian and artinian.</p></li>
+<li><p>The ring <span
+class="math inline">\(\mathbb{Z}[X_1,X_2,\ldots,X_n,\ldots]\)</span> is
+neither noetherian nor artinian: <span class="math display">\[(X_1)
+\subsetneq (X_1,X_2) \subsetneq \cdots \subsetneq
+          (X_1,\ldots,X_n) \subsetneq \cdots\]</span> <span
+class="math display">\[(X_1) \supsetneq (X_1^2) \supsetneq \cdots
+\supsetneq
+          (X_1^k) \supsetneq \cdots\]</span></p></li>
+<li><p>The Prüfer <span class="math inline">\(p\)</span>-group <span
+class="math inline">\(\mathbb{Z}_{p^\infty}\)</span> is an artinian but
+not noetherian <span
+class="math inline">\(\mathbb{Z}\)</span>-module.</p></li>
+</ol>
+</div>
+<div class="proposition">
+<p><strong>Proposition 1.19</strong>. <em>Let <span
+class="math inline">\(N\)</span> and <span
+class="math inline">\(P\)</span> be submodules of <span
+class="math inline">\(M\)</span> such that <span class="math inline">\(M
+= N + P\)</span>. Then <span class="math inline">\(M\)</span> is
+noetherian (artinian) if and only if <span
+class="math inline">\(N\)</span> and <span
+class="math inline">\(P\)</span> are noetherian (artinian).</em></p>
+</div>
+<div class="proposition">
+<p><strong>Proposition 1.20</strong>. <em>For an <span
+class="math inline">\(R\)</span>-module <span
+class="math inline">\(M\)</span> the following statements are
+equivalent:</em></p>
+<ol>
+<li><p><em><span class="math inline">\(M\)</span> is
+noetherian;</em></p></li>
+<li><p><em>every submodule of <span class="math inline">\(M\)</span> is
+finitely generated.</em></p></li>
+</ol>
+</div>
+<div class="proposition">
+<p><strong>Proposition 1.21</strong>. <em>For an <span
+class="math inline">\(R\)</span>-module <span
+class="math inline">\(M\)</span> the following statements are
+equivalent:</em></p>
+<ol>
+<li><p><em><span class="math inline">\(M\)</span> is
+artinian;</em></p></li>
+<li><p><em>for every family <span class="math inline">\((X_i)_{i\in
+I}\)</span> of submodules of <span class="math inline">\(M\)</span>
+there exists a finite subset <span class="math inline">\(J \subseteq
+I\)</span> such that <span class="math display">\[\bigcap_{i\in I} X_i =
+\bigcap_{j\in J} X_j.\]</span></em></p></li>
+</ol>
+</div>
+<h2 id="finite-length-modules">Finite length modules</h2>
+<div class="definition">
+<p><strong>Definition 1.22</strong>. Let <span
+class="math inline">\(M\)</span> be a non-zero right <span
+class="math inline">\(R\)</span>-module. A <em>composition series</em>
+or <em>Jordan–Hölder series</em> of <span
+class="math inline">\(M\)</span> is a finite strictly ascending chain of
+submodules <span class="math display">\[0 = X_0 \subset X_1 \subset
+\cdots \subset X_n = M\]</span> such that <span
+class="math inline">\(X_{i+1}/X_i\)</span> is a simple module for <span
+class="math inline">\(0 \le i \le n-1\)</span>. The integer <span
+class="math inline">\(n\)</span> is called the <em>length</em> of the
+series, and the modules <span class="math inline">\(X_{i+1}/X_i\)</span>
+are called its <em>factors</em>.</p>
+</div>
+<div class="proposition">
+<p><strong>Proposition 1.23</strong>. <em>Let <span
+class="math inline">\(M\)</span> be an <span
+class="math inline">\(R\)</span>-module. The following statements are
+equivalent:</em></p>
+<ol>
+<li><p><em><span class="math inline">\(M\)</span> has a composition
+series;</em></p></li>
+<li><p><em><span class="math inline">\(M\)</span> is noetherian and
+artinian.</em></p></li>
+</ol>
+</div>
+<div class="proposition">
+<p><strong>Proposition 1.24</strong>. <em>Let <span
+class="math display">\[0 \longrightarrow M&#39; \longrightarrow M
+\longrightarrow M&#39;&#39; \longrightarrow 0\]</span> be a short exact
+sequence of right <span class="math inline">\(R\)</span>-modules. Then
+<span class="math inline">\(M\)</span> has a composition series if and
+only if both <span class="math inline">\(M&#39;\)</span> and <span
+class="math inline">\(M&#39;&#39;\)</span> have composition
+series.</em></p>
+</div>
+<p>If <span class="math display">\[0 = M_0 \subseteq M_1 \subseteq
+\cdots \subseteq M_n = M,\qquad
+  0 = N_0 \subseteq N_1 \subseteq \cdots \subseteq N_p = M\]</span> are
+two composition series of <span class="math inline">\(M\)</span>, we say
+that they are <em>equivalent</em> if <span class="math inline">\(n =
+p\)</span> and there exists a bijection <span
+class="math inline">\(\sigma : \{0,\ldots,n-1\} \to
+\{0,\ldots,n-1\}\)</span> such that <span
+class="math display">\[M_{i+1}/M_i \cong M_{\sigma(i)+1}/M_{\sigma(i)}
+  \quad (0 \le i \le n-1).\]</span></p>
+<div class="theorem">
+<p><strong>Theorem 1.25</strong> (Jordan–Hölder). <em>If an <span
+class="math inline">\(R\)</span>-module <span
+class="math inline">\(M\)</span> has two composition series <span
+class="math display">\[0 = M_0 \subseteq M_1 \subseteq \cdots \subseteq
+M_n = M,\qquad
+  0 = N_0 \subseteq N_1 \subseteq \cdots \subseteq N_p = M,\]</span>
+then these two series are equivalent.</em></p>
+</div>
+<div class="definition">
+<p><strong>Definition 1.26</strong>. An <span
+class="math inline">\(R\)</span>-module <span
+class="math inline">\(M\)</span> which admits a composition series is
+called a <em>module of finite length</em>. The length of its composition
+series is called the <em>length</em> of <span
+class="math inline">\(M\)</span> and is denoted by <span
+class="math inline">\(l(M)\)</span>. If <span
+class="math inline">\(M\)</span> admits no composition series, we say
+that <span class="math inline">\(M\)</span> has <em>infinite length</em>
+and we write <span class="math inline">\(l(M)=\infty\)</span>.</p>
+</div>
+<div class="proposition">
+<p><strong>Proposition 1.27</strong>. <em>Let <span
+class="math display">\[0 \longrightarrow M&#39; \longrightarrow M
+\longrightarrow M&#39;&#39; \longrightarrow 0\]</span> be a short exact
+sequence of <span class="math inline">\(R\)</span>-modules of finite
+length. Then <span class="math display">\[l(M) = l(M&#39;) +
+l(M&#39;&#39;).\]</span></em></p>
+</div>
+<div class="corollary">
+<p><strong>Corollary 1.28</strong>. <em>Let <span
+class="math inline">\(M\)</span> be an <span
+class="math inline">\(R\)</span>-module of finite length and let <span
+class="math inline">\(N,L\)</span> be submodules of <span
+class="math inline">\(M\)</span>. Then:</em></p>
+<ol>
+<li><p><em><span class="math inline">\(l(M) = l(N) +
+l(M/N)\)</span>;</em></p></li>
+<li><p><em><span class="math inline">\(l(N+L) + l(N\cap L) = l(N) +
+l(L)\)</span>.</em></p></li>
+</ol>
+</div>
+<div class="corollary">
+<p><strong>Corollary 1.29</strong>. <em>Let <span
+class="math inline">\(M\)</span> be an <span
+class="math inline">\(R\)</span>-module of finite length and let <span
+class="math inline">\(M_1,M_2,\ldots,M_n\)</span> be submodules of <span
+class="math inline">\(M\)</span> such that <span
+class="math display">\[M = M_1 \oplus M_2 \oplus \cdots \oplus
+M_n.\]</span> Then <span class="math display">\[l(M) = \sum_{i=1}^{n}
+l(M_i).\]</span></em></p>
+</div>
+<h2 id="the-jacobson-radical">The Jacobson radical</h2>
+<h3 class="unnumbered" id="the-jacobson-radical-of-a-module">The
+Jacobson radical of a module</h3>
+<div class="definition">
+<p><strong>Definition 1.30</strong>. Let <span
+class="math inline">\(M\)</span> be an <span
+class="math inline">\(R\)</span>-module. The intersection of all maximal
+submodules of <span class="math inline">\(M\)</span> is called the
+<em>Jacobson radical</em> of <span class="math inline">\(M\)</span> and
+is denoted by <span
+class="math inline">\(\mathop{\mathrm{Rad}}(M)\)</span>. If <span
+class="math inline">\(M\)</span> has no maximal submodules, we adopt the
+convention <span
+class="math inline">\(\mathop{\mathrm{Rad}}(M)=M\)</span>.</p>
+</div>
+<div class="remark">
+<p><em>Remark 1.31</em>. If <span class="math inline">\(M\)</span> is a
+finitely generated <span class="math inline">\(R\)</span>-module, then
+<span class="math inline">\(\mathop{\mathrm{Rad}}(M)\ne M\)</span>.</p>
+</div>
+<div class="proposition">
+<p><strong>Proposition 1.32</strong>. <em>Let <span
+class="math inline">\(M\)</span> be an <span
+class="math inline">\(R\)</span>-module. Then <span
+class="math display">\[\mathop{\mathrm{Rad}}(M)
+  = \bigcap_{\substack{f : M \to S\\ S\ \text{simple}}} \ker(f)
+  = \bigcap_{\substack{f : M \to X\\ X\ \text{semisimple}}}
+\ker(f).\]</span></em></p>
+</div>
+<div class="proposition">
+<p><strong>Proposition 1.33</strong>. <em>Let <span
+class="math inline">\(f : M \to N\)</span> be a homomorphism of <span
+class="math inline">\(R\)</span>-modules. Then <span
+class="math inline">\(f(\mathop{\mathrm{Rad}}(M)) \subseteq
+\mathop{\mathrm{Rad}}(N)\)</span>. If, in addition, <span
+class="math inline">\(f\)</span> is an epimorphism and <span
+class="math inline">\(\ker(f) \subseteq
+\mathop{\mathrm{Rad}}(M)\)</span>, then <span
+class="math inline">\(f(\mathop{\mathrm{Rad}}(M)) =
+\mathop{\mathrm{Rad}}(N)\)</span>.</em></p>
+</div>
+<div class="corollary">
+<p><strong>Corollary 1.34</strong>. <em>For every <span
+class="math inline">\(R\)</span>-module <span
+class="math inline">\(M\)</span> we have <span
+class="math inline">\(\mathop{\mathrm{Rad}}(M/\mathop{\mathrm{Rad}}(M))
+= 0\)</span>.</em></p>
+</div>
+<div class="corollary">
+<p><strong>Corollary 1.35</strong>. <em>If <span
+class="math inline">\(M\)</span> is a semisimple <span
+class="math inline">\(R\)</span>-module, then <span
+class="math inline">\(\mathop{\mathrm{Rad}}(M)=0\)</span>.</em></p>
+</div>
+<div class="corollary">
+<p><strong>Corollary 1.36</strong>. <em>If <span class="math inline">\(M
+= \bigoplus_{i\in I} M_i\)</span>, then <span
+class="math display">\[\mathop{\mathrm{Rad}}(M) = \bigoplus_{i\in I}
+\mathop{\mathrm{Rad}}(M_i).\]</span></em></p>
+</div>
+<div class="proposition">
+<p><strong>Proposition 1.37</strong>. <em>Let <span
+class="math inline">\(M\)</span> be an <span
+class="math inline">\(R\)</span>-module with <span
+class="math inline">\(\mathop{\mathrm{Rad}}(M)\ne M\)</span>. Then <span
+class="math display">\[\mathop{\mathrm{Rad}}(M)
+  = \bigcap \{\,L \le M \mid L \text{ is a superfluous
+submodule}\,\}.\]</span></em></p>
+</div>
+<div class="proposition">
+<p><strong>Proposition 1.38</strong> (Nakayama’s Lemma). <em>Let <span
+class="math inline">\(M\)</span> be a finitely generated <span
+class="math inline">\(R\)</span>-module and <span
+class="math inline">\(N\)</span> a submodule of <span
+class="math inline">\(M\)</span>. If <span class="math inline">\(N +
+\mathop{\mathrm{Rad}}(M) = M\)</span>, then <span
+class="math inline">\(N = M\)</span>. (In other words, <span
+class="math inline">\(\mathop{\mathrm{Rad}}(M)\)</span> is the largest
+superfluous submodule of <span
+class="math inline">\(M\)</span>.)</em></p>
+</div>
+<h3 class="unnumbered" id="the-jacobson-radical-of-a-ring">The Jacobson
+radical of a ring</h3>
+<p>Let <span class="math inline">\(R\)</span> be a ring. We consider the
+left ideal <span class="math inline">\(\mathop{\mathrm{Rad}}({}_R
+R)\)</span>, the intersection of all maximal left ideals of <span
+class="math inline">\(R\)</span>, and the right ideal <span
+class="math inline">\(\mathop{\mathrm{Rad}}(R_R)\)</span>, the
+intersection of all maximal right ideals of <span
+class="math inline">\(R\)</span>.</p>
+<div class="proposition">
+<p><strong>Proposition 1.39</strong>. </p>
+<ol>
+<li><p><em><span
+class="math inline">\(\mathop{\mathrm{Rad}}(R_R)\)</span> is a two-sided
+ideal.</em></p></li>
+<li><p><em><span class="math inline">\(\mathop{\mathrm{Rad}}(R_R)
+          = \{\,r \in R \mid 1-ar \in U(R)\ \text{for all } a \in
+R\,\}\)</span>.</em></p></li>
+<li><p><em><span class="math inline">\(\mathop{\mathrm{Rad}}(R_R) =
+\mathop{\mathrm{Rad}}({}_R R)\)</span>.</em></p></li>
+</ol>
+</div>
+<div class="definition">
+<p><strong>Definition 1.40</strong>. The two-sided ideal <span
+class="math inline">\(\mathop{\mathrm{Rad}}(R_R) =
+\mathop{\mathrm{Rad}}({}_R R)\)</span> is called the <em>Jacobson
+radical</em> of the ring <span class="math inline">\(R\)</span> and is
+denoted by <span
+class="math inline">\(\mathop{\mathrm{Rad}}(R)\)</span>.</p>
+</div>
+<div class="proposition">
+<p><strong>Proposition 1.41</strong>. </p>
+<ol>
+<li><p><em>If <span class="math inline">\(J\)</span> is a left
+(resp. right or two-sided) ideal such that <span
+class="math inline">\(1-x\)</span> is invertible for every <span
+class="math inline">\(x \in J\)</span>, then <span
+class="math inline">\(J \subseteq
+\mathop{\mathrm{Rad}}(R)\)</span>.</em></p></li>
+<li><p><em>If <span class="math inline">\(J\)</span> is a nil left
+(resp. right or two-sided) ideal, then <span class="math inline">\(J
+\subseteq \mathop{\mathrm{Rad}}(R)\)</span>.</em></p></li>
+</ol>
+</div>
+<div class="proposition">
+<p><strong>Proposition 1.42</strong>. <em>Let <span
+class="math inline">\(\varphi : R \to S\)</span> be a surjective ring
+homomorphism. Then <span
+class="math inline">\(\varphi(\mathop{\mathrm{Rad}}(R)) \subseteq
+\mathop{\mathrm{Rad}}(S)\)</span>. If <span
+class="math inline">\(\ker(\varphi)
+\subseteq \mathop{\mathrm{Rad}}(R)\)</span>, then <span
+class="math inline">\(\varphi(\mathop{\mathrm{Rad}}(R)) =
+\mathop{\mathrm{Rad}}(S)\)</span>.</em></p>
+</div>
+<div class="proposition">
+<p><strong>Proposition 1.43</strong>. <em>If <span
+class="math inline">\((R_i)_{i\in I}\)</span> is a family of rings, then
+<span class="math display">\[\mathop{\mathrm{Rad}}\Bigl(\prod_{i\in I}
+R_i\Bigr) = \prod_{i\in I} \mathop{\mathrm{Rad}}(R_i).\]</span></em></p>
+</div>
+<div class="proposition">
+<p><strong>Proposition 1.44</strong>. <em>Let <span
+class="math inline">\(M\)</span> be an <span
+class="math inline">\(R\)</span>-module. Then <span
+class="math inline">\(M\,\mathop{\mathrm{Rad}}(R) \subseteq
+\mathop{\mathrm{Rad}}(M)\)</span>.</em></p>
+</div>
+<div class="theorem">
+<p><strong>Theorem 1.45</strong>. <em>If <span
+class="math inline">\(R\)</span> is an artinian ring, then <span
+class="math inline">\(\mathop{\mathrm{Rad}}(R)\)</span> is
+nilpotent.</em></p>
+</div>
+<h2 id="semisimple-rings">Semisimple rings</h2>
+<div class="theorem">
+<p><strong>Theorem 1.46</strong>. <em>For a ring <span
+class="math inline">\(R\)</span> the following statements are
+equivalent:</em></p>
+<ol>
+<li><p><em>every non-zero right <span
+class="math inline">\(R\)</span>-module is semisimple;</em></p></li>
+<li><p><em><span class="math inline">\(R\)</span> as a right <span
+class="math inline">\(R\)</span>-module is semisimple;</em></p></li>
+<li><p><em><span class="math inline">\(R\)</span> is artinian and <span
+class="math inline">\(\mathop{\mathrm{Rad}}(R)=0\)</span>.</em></p></li>
+</ol>
+</div>
+<div class="definition">
+<p><strong>Definition 1.47</strong>. A ring <span
+class="math inline">\(R\)</span> satisfying any (hence all) of the above
+conditions is called a <em>semisimple ring</em>.</p>
+</div>
+<div class="proposition">
+<p><strong>Proposition 1.48</strong>. <em>Let <span
+class="math inline">\(R\)</span> be a semisimple ring and <span
+class="math inline">\(M\)</span> a non-zero <span
+class="math inline">\(R\)</span>-module. The following statements are
+equivalent:</em></p>
+<ol>
+<li><p><em><span class="math inline">\(M\)</span> has finite
+length;</em></p></li>
+<li><p><em><span class="math inline">\(M\)</span> is
+noetherian;</em></p></li>
+<li><p><em><span class="math inline">\(M\)</span> is
+artinian.</em></p></li>
+</ol>
+</div>
+<div class="theorem">
+<p><strong>Theorem 1.49</strong>. <em>Let <span
+class="math inline">\(R\)</span> be a right artinian ring and <span
+class="math inline">\(M\)</span> a non-zero right <span
+class="math inline">\(R\)</span>-module. The following statements are
+equivalent:</em></p>
+<ol>
+<li><p><em><span class="math inline">\(M\)</span> has finite
+length;</em></p></li>
+<li><p><em><span class="math inline">\(M\)</span> is
+noetherian;</em></p></li>
+<li><p><em><span class="math inline">\(M\)</span> is
+artinian.</em></p></li>
+</ol>
+</div>
+<div class="corollary">
+<p><strong>Corollary 1.50</strong> (Hopkins). <em>A right artinian ring
+(respectively a left artinian ring) is right noetherian (respectively
+left noetherian).</em></p>
+</div>
+<h1 id="essential-submodules">Essential submodules</h1>
+<div class="definition">
+<p><strong>Definition 2.1</strong>. Let <span
+class="math inline">\(M\)</span> be a right <span
+class="math inline">\(R\)</span>-module. A submodule <span
+class="math inline">\(N\)</span> of <span
+class="math inline">\(M\)</span> is called <em>essential</em> (or we say
+that <span class="math inline">\(M\)</span> is an essential extension of
+<span class="math inline">\(N\)</span>) if <span class="math inline">\(N
+\cap N&#39; \ne 0\)</span> for every non-zero submodule <span
+class="math inline">\(N&#39;\)</span> of <span
+class="math inline">\(M\)</span>. In this case we write <span
+class="math inline">\(N \trianglelefteq M_R\)</span>.</p>
+<p>A homomorphism of right <span
+class="math inline">\(R\)</span>-modules <span class="math inline">\(f :
+M \to N\)</span> is called <em>essential</em> if <span
+class="math inline">\(\operatorname{Im} f\)</span> is an essential
+submodule of <span class="math inline">\(N\)</span> (i.e. <span
+class="math inline">\(\operatorname{Im} f \trianglelefteq
+N_R\)</span>).</p>
+</div>
+<div class="example*">
+<p><strong>Example 2.1</strong>. </p>
+<ol>
+<li><p><span class="math inline">\(n\mathbb{Z}
+\trianglelefteq\mathbb{Z}_\mathbb{Z}\)</span> for every <span
+class="math inline">\(n \ge 1\)</span>.</p></li>
+<li><p>Every submodule of the Prüfer group <span
+class="math inline">\(\mathbb{Z}_{p^\infty}\)</span> is
+essential.</p></li>
+</ol>
+</div>
+<div class="remark">
+<p><em>Remark 2.2</em>. Let <span class="math inline">\(M\)</span> be a
+right <span class="math inline">\(R\)</span>-module and <span
+class="math inline">\(N\)</span> a submodule of <span
+class="math inline">\(M\)</span>. Then <span class="math inline">\(N
+\trianglelefteq M_R\)</span> if and only if for every <span
+class="math inline">\(x \in M\)</span>, <span class="math inline">\(x
+\ne 0\)</span>, there exists <span class="math inline">\(r \in
+R\)</span> such that <span class="math inline">\(xr \in N \setminus
+\{0\}\)</span>.</p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> “<span class="math inline">\(\Rightarrow\)</span>”
+Let <span class="math inline">\(x \in M \setminus \{0\}\)</span>. Since
+<span class="math inline">\(0 \ne xR \le M_R\)</span> and <span
+class="math inline">\(N \trianglelefteq M_R\)</span>, we have <span
+class="math inline">\(xR \cap N \ne 0\)</span>; hence there exists <span
+class="math inline">\(r \in R\)</span> with <span
+class="math inline">\(xr \in N \setminus \{0\}\)</span>.</p>
+<p>“<span class="math inline">\(\Leftarrow\)</span>” Let <span
+class="math inline">\(N&#39; \le M_R\)</span>, <span
+class="math inline">\(N&#39; \ne 0\)</span>. For every <span
+class="math inline">\(x \in N&#39; \setminus \{0\}\)</span> there exists
+<span class="math inline">\(r \in R\)</span> such that <span
+class="math inline">\(xr \in N \setminus \{0\}\)</span>, so <span
+class="math inline">\(N \cap N&#39; \ne 0\)</span>. Thus <span
+class="math inline">\(N \trianglelefteq M_R\)</span>. ◻</p>
+</div>
+<div class="definition">
+<p><strong>Definition 2.3</strong>. A monomorphism of right <span
+class="math inline">\(R\)</span>-modules <span class="math inline">\(f :
+N_R \to M_R\)</span> is called <em>essential</em> if <span
+class="math inline">\(\operatorname{Im} f \trianglelefteq M_R\)</span>.
+It is immediate that, if <span class="math inline">\(N\)</span> is a
+submodule of <span class="math inline">\(M\)</span>, then the canonical
+inclusion <span class="math inline">\(i_N : N \to M\)</span> is an
+essential monomorphism if and only if <span class="math inline">\(N
+\trianglelefteq M_R\)</span>.</p>
+</div>
+<div class="proposition">
+<p><strong>Proposition 2.4</strong>. <em>A monomorphism <span
+class="math inline">\(f : N_R \to M_R\)</span> is essential if and only
+if for every right <span class="math inline">\(R\)</span>-module <span
+class="math inline">\(M&#39;\)</span> and every <span
+class="math inline">\(g \in \mathop{\mathrm{Hom}}(M,M&#39;)\)</span>,
+the fact that <span class="math inline">\(g \circ f\)</span> is a
+monomorphism implies that <span class="math inline">\(g\)</span> is a
+monomorphism.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> “<span class="math inline">\(\Rightarrow\)</span>”
+Let <span class="math inline">\(g\)</span> be as in the statement and
+suppose that <span class="math inline">\(g \circ f\)</span> is a
+monomorphism. Assume <span class="math inline">\(\mathop{\mathrm{Ker}}g
+\ne 0\)</span>. Take <span class="math inline">\(x \in
+\mathop{\mathrm{Ker}}g \cap \operatorname{Im} f \setminus
+\{0\}\)</span>. Then <span class="math inline">\(x = f(x&#39;)\)</span>
+for some <span class="math inline">\(x&#39; \in N\)</span> and <span
+class="math inline">\(g(x)=0\)</span>, so <span
+class="math inline">\(g(f(x&#39;)) = 0\)</span>. Since <span
+class="math inline">\(g \circ f\)</span> is a monomorphism, it follows
+that <span class="math inline">\(x&#39; = 0\)</span> and hence <span
+class="math inline">\(x = 0\)</span>, a contradiction.</p>
+<p>“<span class="math inline">\(\Leftarrow\)</span>” If <span
+class="math inline">\(f\)</span> is not an essential monomorphism, then
+there exists <span class="math inline">\(N&#39; \le M_R\)</span>, <span
+class="math inline">\(N&#39; \ne 0\)</span>, such that <span
+class="math inline">\(N&#39; \cap \operatorname{Im} f = 0\)</span>.
+Consider the canonical projection <span
+class="math inline">\(\pi_{N&#39;} : M \to M/N&#39;\)</span>. If <span
+class="math inline">\(x \in \mathop{\mathrm{Ker}}(\pi_{N&#39;} \circ
+f)\)</span>, then <span class="math inline">\(f(x) \in N&#39;\)</span>,
+so <span class="math inline">\(f(x) = 0\)</span>, hence <span
+class="math inline">\(x = 0\)</span>. Thus <span
+class="math inline">\(\pi_{N&#39;} \circ f\)</span> is injective. By the
+hypothesis in the statement, this implies that <span
+class="math inline">\(\pi_{N&#39;}\)</span> is injective, so <span
+class="math inline">\(N&#39; = 0\)</span>, a contradiction. ◻</p>
+</div>
+<div class="corollary">
+<p><strong>Corollary 2.5</strong>. <em>Let <span
+class="math inline">\(M\)</span> be a right <span
+class="math inline">\(R\)</span>-module and <span
+class="math inline">\(N \le M_R\)</span>. Then the following statements
+are equivalent:</em></p>
+<ol>
+<li><p><em><span class="math inline">\(N \trianglelefteq
+M_R\)</span>;</em></p></li>
+<li><p><em>the inclusion <span class="math inline">\(i_N : N \to
+M\)</span> is an essential monomorphism;</em></p></li>
+<li><p><em>for every <span class="math inline">\(f \in
+\mathop{\mathrm{Hom}}(M,M&#39;)\)</span>, with <span
+class="math inline">\(M&#39;\)</span> an arbitrary <span
+class="math inline">\(R\)</span>-module, the fact that <span
+class="math inline">\(f \circ i_N\)</span> is a monomorphism implies
+that <span class="math inline">\(f\)</span> is a
+monomorphism.</em></p></li>
+</ol>
+</div>
+<div class="proposition">
+<p><strong>Proposition 2.6</strong>. <em>Let <span
+class="math inline">\(f : N_R \to M_R\)</span> and <span
+class="math inline">\(g : M_R \to P_R\)</span> be monomorphisms. Then
+<span class="math inline">\(g \circ f\)</span> is essential if and only
+if both <span class="math inline">\(g\)</span> and <span
+class="math inline">\(f\)</span> are essential.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> “<span class="math inline">\(\Leftarrow\)</span>” Let
+<span class="math inline">\(z \in P \setminus \{0\}\)</span>. Since
+<span class="math inline">\(g\)</span> is essential, there exists <span
+class="math inline">\(r \in R\)</span> such that <span
+class="math inline">\(zr \in \operatorname{Im} g \setminus
+\{0\}\)</span>. Thus there exists <span class="math inline">\(y \in M
+\setminus \{0\}\)</span> with <span class="math inline">\(zr =
+g(y)\)</span>. As <span class="math inline">\(f\)</span> is essential,
+there exists <span class="math inline">\(r&#39; \in R\)</span> such that
+<span class="math inline">\(y r&#39; \in \mathrm{Im}\, f \setminus
+\{0\}\)</span>. Hence there exists <span class="math inline">\(x \in N
+\setminus \{0\}\)</span> with <span class="math inline">\(y r&#39; =
+f(x)\)</span>. But <span class="math inline">\(z r&#39; = g(y) r&#39; =
+g(y r&#39;) = g(f(x))\)</span>. If <span class="math inline">\(z r&#39;
+= 0\)</span>, then <span class="math inline">\(g(f(x)) = 0\)</span>,
+hence <span class="math inline">\(x = 0\)</span>, a contradiction.
+Therefore <span class="math inline">\(z r&#39; \in \mathrm{Im}(g \circ
+f)\)</span> and <span class="math inline">\(z r&#39; \neq 0\)</span>,
+which shows that <span class="math inline">\(g \circ f\)</span> is
+essential.</p>
+<p>“<span class="math inline">\(\Rightarrow\)</span>” Let <span
+class="math inline">\(y \in M \setminus \{0\}\)</span>. Since <span
+class="math inline">\(g\)</span> is a monomorphism, <span
+class="math inline">\(g(y) \neq 0\)</span>. Thus there exists <span
+class="math inline">\(r \in R\)</span> such that <span
+class="math inline">\(g(yr) \in \mathrm{Im}\, g \setminus \{0\}\)</span>
+and <span class="math inline">\(g(yr) \neq 0\)</span>. Hence there
+exists <span class="math inline">\(x \in N \setminus \{0\}\)</span> such
+that <span class="math inline">\(g(yr) = g(f(x))\)</span>, therefore
+<span class="math inline">\(yr = f(x) \in \mathrm{Im}\, f\)</span>,
+which shows that <span class="math inline">\(f\)</span> is an essential
+monomorphism.</p>
+<p>If <span class="math inline">\(z \in P \setminus \{0\}\)</span>,
+there exists <span class="math inline">\(r \in R\)</span> such that
+<span class="math inline">\(z r \in \mathrm{Im}(g \circ f)\)</span> and
+<span class="math inline">\(z r \neq 0\)</span>. Since <span
+class="math inline">\(\mathrm{Im}(g \circ f) \subseteq \mathrm{Im}\,
+g\)</span>, we obtain <span class="math inline">\(z r \in \mathrm{Im}\,
+g\)</span>, so <span class="math inline">\(g\)</span> is
+essential. ◻</p>
+</div>
+<div class="proposition">
+<p><strong>Proposition 2.7</strong>. <em>Let <span
+class="math inline">\(M\)</span> be a right <span
+class="math inline">\(R\)</span>-module and <span
+class="math inline">\(L_1, L_2, \ldots, L_n\)</span> submodules of <span
+class="math inline">\(M\)</span>. Then:</em></p>
+<p><em>1) <span class="math inline">\(\displaystyle \bigcap_{i=1}^n
+L_i\)</span> is essential in <span class="math inline">\(M\)</span> iff
+each <span class="math inline">\(L_i\)</span> is essential in <span
+class="math inline">\(M\)</span>.</em></p>
+<p><em>2) If <span class="math inline">\(L_1 \subseteq L_2\)</span> and
+<span class="math inline">\(L_1\)</span> is essential in <span
+class="math inline">\(M\)</span>, then <span
+class="math inline">\(L_2\)</span> is essential in <span
+class="math inline">\(M\)</span>.</em></p>
+</div>
+<p>The proof is obvious.</p>
+<div class="proposition">
+<p><strong>Proposition 2.8</strong>. <em>Let <span
+class="math inline">\(K\)</span> and <span
+class="math inline">\(L\)</span> be submodules of <span
+class="math inline">\(M\)</span>.</em></p>
+<p><em>1) If <span class="math inline">\(K \subseteq L \subseteq
+M\)</span>, then <span class="math inline">\(K \, \trianglelefteq\,
+M\)</span> iff <span class="math inline">\(K \, \trianglelefteq\,
+L\)</span> and <span class="math inline">\(L \, \trianglelefteq\,
+M\)</span>.</em></p>
+<p><em>2) If <span class="math inline">\(h : K_R \to M_R\)</span> is a
+module morphism and <span class="math inline">\(L \, \trianglelefteq\,
+M\)</span>, then <span class="math inline">\(h^{-1}(L) \,
+\trianglelefteq\, K\)</span>.</em></p>
+<p><em>3) If <span class="math inline">\(L_1, L_2 \leq M_R\)</span> with
+<span class="math inline">\(K_1 \, \trianglelefteq\, L_1\)</span> and
+<span class="math inline">\(K_2 \, \trianglelefteq\, L_2\)</span>, then
+<span class="math inline">\(K_1 \cap K_2 \, \trianglelefteq\, L_1 \cap
+L_2\)</span>.</em></p>
+</div>
+<p><strong>Proof.</strong></p>
+<p>1) Apply 1.5 and 1.6.</p>
+<p>2) Let <span class="math inline">\(U\)</span> be a non-zero submodule
+of <span class="math inline">\(K\)</span>.</p>
+<p>(i) If <span class="math inline">\(h(U) = 0\)</span>, then <span
+class="math inline">\(U \subseteq \ker h \subseteq h^{-1}(L)\)</span>,
+so <span class="math inline">\(U \cap h^{-1}(L) \neq 0\)</span>.</p>
+<p>(ii) If <span class="math inline">\(h(U) \neq 0\)</span>, then <span
+class="math inline">\(h(U) \cap L \neq 0\)</span>. Hence there exists
+<span class="math inline">\(u \in U\)</span> with <span
+class="math inline">\(h(u) \in L\)</span>, <span
+class="math inline">\(h(u) \neq 0\)</span>, so <span
+class="math inline">\(u \in U \cap h^{-1}(L)\)</span> and <span
+class="math inline">\(u \neq 0\)</span>.</p>
+<p>Thus <span class="math inline">\(h^{-1}(L) \, \trianglelefteq\,
+K\)</span>.</p>
+<p>3) Let <span class="math inline">\(0 \neq X \leq L_1 \cap
+L_2\)</span>. Then <span class="math inline">\(X \subseteq L_1\)</span>,
+so <span class="math inline">\(0 \neq X \cap K_1 \leq L_1\)</span>. But
+<span class="math inline">\(X \subseteq L_2\)</span> implies <span
+class="math inline">\(0 \neq (X \cap K_1) \cap L_2 = X \cap (K_1 \cap
+K_2)\)</span>. Hence <span class="math inline">\(K_1 \cap K_2 \,
+\trianglelefteq\, L_1 \cap L_2\)</span>.</p>
+<div class="proposition">
+<p><strong>Proposition 2.9</strong>. <em>Let <span
+class="math inline">\((K_\lambda)_{\lambda \in \Lambda}\)</span>, <span
+class="math inline">\((L_\lambda)_{\lambda \in \Lambda}\)</span> be
+families of submodules of <span class="math inline">\(M\)</span>. If
+<span class="math inline">\((K_\lambda)\)</span> is independent in <span
+class="math inline">\(M\)</span> and <span
+class="math inline">\(K_\lambda \, \trianglelefteq\, L_\lambda\)</span>
+for all <span class="math inline">\(\lambda \in \Lambda\)</span>, then
+<span class="math inline">\((L_\lambda)\)</span> is independent in <span
+class="math inline">\(M\)</span> and <span
+class="math display">\[\left(\bigoplus_{\lambda \in \Lambda}
+K_\lambda\right)
+   \, \trianglelefteq\,
+\left(\bigoplus_{\lambda \in \Lambda}
+L_\lambda\right).\]</span></em></p>
+</div>
+<p><strong>Proof.</strong></p>
+<p>Let <span class="math inline">\(K_1 \, \trianglelefteq\,
+L_1\)</span>, <span class="math inline">\(K_2 \, \trianglelefteq\,
+L_2\)</span> with <span class="math inline">\(K_1 \cap K_2 = 0\)</span>.
+By 1.8(3), <span class="math inline">\(0 \, \trianglelefteq\, L_1 \cap
+L_2\)</span>, hence <span class="math inline">\(L_1 \cap L_2 =
+0\)</span>.</p>
+<p>Let <span class="math inline">\(\pi_1 : L_1 \oplus L_2 \to
+L_1\)</span>, <span class="math inline">\(\pi_2 : L_1 \oplus L_2 \to
+L_2\)</span> be the canonical projections. Since <span
+class="math inline">\(K_1 \, \trianglelefteq\, L_1\)</span> and <span
+class="math inline">\(K_2 \, \trianglelefteq\, L_2\)</span>,</p>
+<p><span class="math display">\[\pi_1^{-1}(K_1)
+  = K_1 \oplus 0 \, \trianglelefteq\, L_1 \oplus L_2,\]</span> and <span
+class="math display">\[\pi_2^{-1}(K_2)
+  = 0 \oplus K_2 \, \trianglelefteq\, L_1 \oplus L_2.\]</span></p>
+<p>Hence <span class="math display">\[K_1 \oplus K_2
+  = \pi_1^{-1}(K_1) \cap \pi_2^{-1}(K_2)
+  \, \trianglelefteq\, L_1 \oplus L_2.\]</span></p>
+<p>Induction gives the finite case. For the general case, let <span
+class="math inline">\(0 \neq m \in \oplus_{\lambda \in \Lambda}
+L_\lambda\)</span>. Then <span class="math inline">\(m\)</span> lies in
+a finite direct sum <span class="math inline">\(\oplus_{\lambda \in
+\Lambda_0} L_\lambda\)</span> for some finite <span
+class="math inline">\(\Lambda_0 \subseteq \Lambda\)</span>. Since <span
+class="math inline">\((\oplus_{\lambda \in \Lambda_0} K_\lambda)
+   \, \trianglelefteq\,
+(\oplus_{\lambda \in \Lambda_0} L_\lambda)\)</span>, there exists <span
+class="math inline">\(r \in R\)</span> with <span
+class="math inline">\(rm \in (\oplus_{\lambda \in \Lambda_0} K_\lambda)
+\setminus \{0\}
+\subseteq (\oplus_{\lambda \in \Lambda} K_\lambda)\)</span>. Thus <span
+class="math display">\[\left(\bigoplus_{\lambda \in \Lambda}
+K_\lambda\right)
+   \, \trianglelefteq\,
+\left(\bigoplus_{\lambda \in \Lambda} L_\lambda\right).\]</span></p>
+<div class="proposition">
+<p><strong>Proposition 2.10</strong>. <em>Let <span
+class="math inline">\(N\)</span> be a submodule of <span
+class="math inline">\(M\)</span>. Then there exists a submodule <span
+class="math inline">\(Q\)</span> with <span class="math inline">\(N
+\subseteq Q \subseteq M\)</span> such that <span
+class="math inline">\(Q\)</span> is a maximal essential extension of
+<span class="math inline">\(N\)</span> inside <span
+class="math inline">\(M\)</span>.</em></p>
+</div>
+<p><strong>Proof.</strong></p>
+<p>Let <span class="math display">\[\mathfrak{S}
+= \{ L \leq M \; ;\; N \subseteq L \subseteq M,\; N \, \trianglelefteq\,
+L \},\]</span> ordered by inclusion. Clearly <span
+class="math inline">\(\mathfrak{S} \neq \varnothing\)</span>, since
+<span class="math inline">\(N \in \mathfrak{S}\)</span>.</p>
+<p>Let <span class="math inline">\((L_\lambda)_{\lambda \in
+\Lambda}\)</span> be a totally ordered family of elements of <span
+class="math inline">\(\mathfrak{S}\)</span> and put <span
+class="math display">\[L := \bigcup_{\lambda \in \Lambda}
+L_\lambda.\]</span> Clearly <span class="math inline">\(L \leq
+M_R\)</span>.</p>
+<p>Let <span class="math inline">\(x \in L \setminus \{0\}\)</span>.
+Then there exists <span class="math inline">\(\lambda_0 \in
+\Lambda\)</span> with <span class="math inline">\(x \in
+L_{\lambda_0}\)</span>. Since <span class="math inline">\(N\)</span> is
+essential in <span class="math inline">\(L_{\lambda_0}\)</span>, there
+exists <span class="math inline">\(r \in R\)</span> such that <span
+class="math inline">\(xr \in N\)</span> and <span
+class="math inline">\(xr \neq 0\)</span>, hence <span
+class="math inline">\(L\)</span> is an essential extension of <span
+class="math inline">\(N\)</span>. Thus <span
+class="math inline">\(\mathfrak{S}\)</span> is inductive and, by Zorn’s
+lemma, <span class="math inline">\(\mathfrak{S}\)</span> admits a
+maximal element <span class="math inline">\(Q\)</span> which satisfies
+the required conditions.</p>
+<div class="definition">
+<p><strong>Definition 2.11</strong>. Let <span
+class="math inline">\(M\)</span> be a right <span
+class="math inline">\(R\)</span>-module and <span
+class="math inline">\(N \leq M_R\)</span>. A submodule <span
+class="math inline">\(K \leq M_R\)</span> is called a
+<em>complement</em> of <span class="math inline">\(N\)</span> in <span
+class="math inline">\(M\)</span> if <span
+class="math inline">\(K\)</span> is a maximal submodule of <span
+class="math inline">\(M\)</span> with the property that <span
+class="math inline">\(K \cap N = 0\)</span>. A submodule <span
+class="math inline">\(K \leq M_R\)</span> is called a <em>complement
+submodule</em> of <span class="math inline">\(M\)</span> if there exists
+<span class="math inline">\(N \leq M_R\)</span> such that <span
+class="math inline">\(K\)</span> is a complement of <span
+class="math inline">\(N\)</span> in <span
+class="math inline">\(M\)</span>.</p>
+</div>
+<div class="remark">
+<p><em>Remark 2.12</em>. The set <span
+class="math display">\[\widetilde{\mathfrak{S}}
+  = \{\,L \leq M_R \mid N \cap L = 0\,\}\]</span> is inductive and, by
+applying Zorn’s lemma, it follows that there exists a complement of
+<span class="math inline">\(N\)</span> in <span
+class="math inline">\(M\)</span>. In particular, <span
+class="math inline">\(0\)</span> and <span
+class="math inline">\(M\)</span> are complement submodules of <span
+class="math inline">\(M\)</span>.</p>
+</div>
+<div class="proposition">
+<p><strong>Proposition 2.13</strong>. <em>Let <span
+class="math inline">\(M_R\)</span>, <span class="math inline">\(N \leq
+M_R\)</span> and <span class="math inline">\(K \leq M_R\)</span>, with
+<span class="math inline">\(K\)</span> a complement of <span
+class="math inline">\(N\)</span> in <span
+class="math inline">\(M\)</span>. There exists a complement <span
+class="math inline">\(Q\)</span> of <span
+class="math inline">\(K\)</span> in <span
+class="math inline">\(M\)</span> such that <span class="math inline">\(N
+\subseteq Q\)</span>. Moreover, <span class="math inline">\(Q\)</span>
+is a maximal essential extension of <span
+class="math inline">\(N\)</span> in <span
+class="math inline">\(M\)</span>.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> It is easy to see that the set <span
+class="math display">\[\widetilde{\mathfrak{S}}
+  = \{\,L \leq M_R \mid K \cap L = 0,\; N \subseteq L\,\}\]</span> is
+inductive, and Zorn’s lemma guarantees the existence of <span
+class="math inline">\(Q\)</span>.</p>
+<p>Let <span class="math inline">\(L\)</span> be a non-zero submodule of
+<span class="math inline">\(Q\)</span> such that <span
+class="math inline">\(L \cap N = 0\)</span>. Put <span
+class="math inline">\(K_1 = L + K\)</span>. Clearly <span
+class="math inline">\(K \subseteq K_1\)</span>. If <span
+class="math inline">\(x \in N \cap (L + K)\)</span>, then <span
+class="math inline">\(x = y + z\)</span> with <span
+class="math inline">\(y \in L\)</span>, <span class="math inline">\(z
+\in K\)</span>. But <span class="math inline">\(z = x - y \in
+Q\)</span>. Since <span class="math inline">\(Q \cap K = 0\)</span>, we
+obtain <span class="math inline">\(z = 0\)</span> and hence <span
+class="math inline">\(x = y\)</span>. From <span class="math inline">\(L
+\cap N = 0\)</span> it follows that <span class="math inline">\(x = y =
+0\)</span>, and therefore <span class="math inline">\(N \cap (L + K) =
+0\)</span>, which contradicts the fact that <span
+class="math inline">\(K\)</span> is a complement of <span
+class="math inline">\(N\)</span> in <span
+class="math inline">\(M\)</span>. Thus <span class="math inline">\(L
+\cap N \neq 0\)</span> for every <span class="math inline">\(0 \neq L
+\leq Q\)</span>, so <span class="math inline">\(Q\)</span> is an
+essential extension of <span class="math inline">\(N\)</span>.</p>
+<p>Suppose that there exists <span class="math inline">\(Q&#39; \leq
+M_R\)</span> with <span class="math inline">\(N \trianglelefteq
+Q&#39;\)</span> and <span class="math inline">\(Q \subsetneq
+Q&#39;\)</span>. Since <span class="math inline">\(Q&#39;\)</span> is a
+complement of <span class="math inline">\(K\)</span>, we have <span
+class="math inline">\(Q&#39; \cap K \neq 0\)</span>. But <span
+class="math inline">\(N \cap (Q&#39; \cap K) = 0\)</span> and <span
+class="math inline">\(0 \neq Q&#39; \cap K \leq Q&#39;\)</span>,
+contradicting <span class="math inline">\(N \trianglelefteq
+Q&#39;\)</span>. Hence <span class="math inline">\(Q\)</span> is a
+maximal essential extension of <span class="math inline">\(N\)</span> in
+<span class="math inline">\(M\)</span>. ◻</p>
+</div>
+<div class="definition">
+<p><strong>Definition 2.14</strong>. A submodule <span
+class="math inline">\(N\)</span> of <span
+class="math inline">\(M_R\)</span> is called <em>closed</em> if <span
+class="math inline">\(N\)</span> has no proper (meaning different from
+<span class="math inline">\(N\)</span>) essential extension in <span
+class="math inline">\(M\)</span>.</p>
+</div>
+<div class="corollary">
+<p><strong>Corollary 2.15</strong>. <em>Let <span
+class="math inline">\(M_R\)</span> be a right <span
+class="math inline">\(R\)</span>-module. The complement submodules of
+<span class="math inline">\(M\)</span> coincide with the closed
+submodules of <span class="math inline">\(M\)</span>.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> From 1.13 it follows immediately that every closed
+submodule of <span class="math inline">\(M\)</span> is a complement
+submodule of <span class="math inline">\(M\)</span>.</p>
+<p>Conversely, let <span class="math inline">\(K\)</span> be a
+complement submodule of <span class="math inline">\(M_R\)</span>. Then
+there exists <span class="math inline">\(N \leq M_R\)</span> such that
+<span class="math inline">\(K\)</span> is a complement of <span
+class="math inline">\(N\)</span> in <span
+class="math inline">\(M\)</span>. Assume that <span
+class="math inline">\(K\)</span> has a proper essential extension in
+<span class="math inline">\(M\)</span>; that is, there exists <span
+class="math inline">\(K&#39; \leq M_R\)</span> with <span
+class="math inline">\(K \trianglelefteq K&#39;\)</span> and <span
+class="math inline">\(K \subsetneq K&#39;\)</span>. By the maximality of
+<span class="math inline">\(K\)</span> we have <span
+class="math inline">\(K&#39; \cap N \neq 0\)</span>, and since <span
+class="math inline">\(K \trianglelefteq K&#39;\)</span>, it follows that
+<span class="math display">\[K \cap K&#39; \cap N \neq 0,\]</span>
+contradiction. ◻</p>
+</div>
+<div class="corollary">
+<p><strong>Corollary 2.16</strong>. <em>Let <span
+class="math inline">\(N\)</span> be a submodule of <span
+class="math inline">\(M_R\)</span>. If <span
+class="math inline">\(K\)</span> is a complement of <span
+class="math inline">\(N\)</span> in <span
+class="math inline">\(M\)</span>, then:</em></p>
+<ol>
+<li><p><em><span class="math inline">\((N + K) \trianglelefteq
+M_R\)</span>.</em></p></li>
+<li><p><em>The canonical morphism <span class="math inline">\(\pi_K
+\circ i_N : N \to M/K\)</span> is an essential
+monomorphism.</em></p></li>
+</ol>
+</div>
+<div class="proof">
+<p><em>Proof.</em> (1) Let <span class="math inline">\(x \in M \setminus
+\{0\}\)</span>. If <span class="math inline">\(x \notin K\)</span>, then
+<span class="math inline">\(K + Rx \neq K\)</span> and hence <span
+class="math inline">\(N \cap (K + Rx) \neq 0\)</span>. Let <span
+class="math inline">\(y \in N \cap (K + Rx)\)</span>, <span
+class="math inline">\(y \neq 0\)</span>. There exist <span
+class="math inline">\(z \in K\)</span> and <span class="math inline">\(r
+\in R\)</span> such that <span class="math inline">\(y = z +
+rx\)</span>. If <span class="math inline">\(rx = 0\)</span>, then <span
+class="math inline">\(y = z\)</span> and, since <span
+class="math inline">\(N \cap K = 0\)</span>, we obtain <span
+class="math inline">\(y = 0\)</span>, a contradiction. Thus <span
+class="math inline">\(rx \neq 0\)</span> and, because <span
+class="math inline">\(rx = y - z\)</span>, we have <span
+class="math inline">\(rx \in N + K\)</span>, which shows that <span
+class="math inline">\((N + K) \trianglelefteq M_R\)</span>.</p>
+<p>(2) We have <span class="math inline">\(\mathrm{Im}(\pi_K \circ i_N)
+= (N + K)/K\)</span>. Let <span class="math inline">\(L/K\)</span> be a
+non-zero submodule of <span class="math inline">\(M/K\)</span>. Then
+<span class="math display">\[\frac{N + K}{K} \cap \frac{L}{K}
+   = \frac{(N + K) \cap L}{K}
+   = \frac{N \cap L + K}{K}.\]</span> Since <span
+class="math inline">\(K\)</span> is a complement of <span
+class="math inline">\(N\)</span>, we have <span class="math inline">\(N
+\cap L \neq 0\)</span>, and hence <span class="math display">\[\frac{N
+\cap L + K}{K} \neq 0,\]</span> which shows that <span
+class="math inline">\(\pi_K \circ i_N\)</span> is an essential
+monomorphism. ◻</p>
+</div>
+<h1 id="injective-modules">Injective Modules</h1>
+<h2 id="injective-module">Injective Module</h2>
+<p>Let <span class="math inline">\(Q\)</span> and <span
+class="math inline">\(M\)</span> be two right <span
+class="math inline">\(R\)</span>-modules. We say that <span
+class="math inline">\(Q\)</span> is <em><span
+class="math inline">\(M\)</span>-injective</em> if for every
+monomorphism <span class="math inline">\(u : M&#39; \to M\)</span> and
+every morphism <span class="math inline">\(f : M&#39; \to Q\)</span>,
+there exists <span class="math inline">\(g : M \to Q\)</span> such that
+<span class="math inline">\(g \circ u = f\)</span>; that is, the
+diagram</p>
+<p><img src="diagrams/diagram_0.svg" alt="Commutative diagram" style="max-width: 100%; height: auto; display: block; margin: 1em auto;"></p>
+<p>is commutative.</p>
+<p>This property is equivalent to the condition that the map <span
+class="math display">\[\mathop{\mathrm{Hom}}(u,Q) :
+\mathop{\mathrm{Hom}}(M,Q) \longrightarrow
+\mathop{\mathrm{Hom}}(M&#39;,Q)\]</span> is surjective for every
+monomorphism <span class="math inline">\(u : M&#39; \to M\)</span>.
+Since the functor <span
+class="math inline">\(\mathop{\mathrm{Hom}}(-,Q)\)</span> is left exact,
+it follows that <span class="math inline">\(Q\)</span> is <span
+class="math inline">\(M\)</span>-injective if and only if <span
+class="math inline">\(\mathop{\mathrm{Hom}}(-,Q)\)</span> is exact with
+respect to every short exact sequence of the form <span
+class="math display">\[0 \longrightarrow M&#39; \longrightarrow M
+\longrightarrow M&#39;&#39; \longrightarrow 0.\]</span></p>
+<p>The <span class="math inline">\(R\)</span>-module <span
+class="math inline">\(Q\)</span> is called <em>quasi-injective</em> (or
+<em>self-injective</em>) if it is <span
+class="math inline">\(Q\)</span>-injective. If <span
+class="math inline">\(Q\)</span> is <span
+class="math inline">\(M\)</span>-injective for every <span
+class="math inline">\(R\)</span>-module <span
+class="math inline">\(M\)</span>, then <span
+class="math inline">\(Q\)</span> is called <em>injective</em>.</p>
+<p>2.1.1 Proposition</p>
+<div class="proposition">
+<p><strong>Proposition 3.1</strong>. <em>Let <span
+class="math inline">\(Q\)</span> and <span
+class="math inline">\(M\)</span> be two <span
+class="math inline">\(R\)</span>-modules. The following statements are
+equivalent:</em></p>
+<ol>
+<li><p><em><span class="math inline">\(Q\)</span> is <span
+class="math inline">\(M\)</span>-injective.</em></p></li>
+<li><p><em>For every submodule <span class="math inline">\(N\)</span> of
+<span class="math inline">\(M\)</span> and every morphism <span
+class="math inline">\(f : N \to Q\)</span>, there exists <span
+class="math inline">\(g : M \to Q\)</span> such that <span
+class="math inline">\(g_{\mid N} = f\)</span>.</em></p></li>
+<li><p><em>For every essential submodule <span
+class="math inline">\(N\)</span> of <span
+class="math inline">\(M\)</span> and every morphism <span
+class="math inline">\(f : N \to Q\)</span>, there exists <span
+class="math inline">\(g : M \to Q\)</span> such that <span
+class="math inline">\(g_{\mid N} = f\)</span>.</em></p></li>
+</ol>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Implications <span class="math inline">\((1)
+\Rightarrow (2)\)</span> and <span class="math inline">\((2) \Rightarrow
+(3)\)</span> are obvious.</p>
+<p><span class="math inline">\((2) \Rightarrow (1)\)</span>. Let <span
+class="math inline">\(M&#39;_R\)</span>, <span class="math inline">\(0
+\longrightarrow M&#39; \xrightarrow{u} M\)</span> and <span
+class="math inline">\(f : M&#39; \to Q\)</span>. Then <span
+class="math inline">\(u(M&#39;) \leq M\)</span>. Consider <span
+class="math inline">\(i : u(M&#39;) \to M\)</span> the canonical
+injection and <span class="math inline">\(\bar{u} : M&#39; \to
+u(M&#39;)\)</span> the isomorphism induced by <span
+class="math inline">\(u\)</span>. There exists <span
+class="math inline">\(g : M \to Q\)</span> such that <span
+class="math inline">\(g \circ i = f \circ \bar{u}^{-1}\)</span>. Hence
+<span class="math display">\[g \circ i \circ \bar{u} = f
+\quad\text{and therefore}\quad
+g \circ u = f.\]</span></p>
+<p><img src="diagrams/diagram_1.svg" alt="Commutative diagram" style="max-width: 100%; height: auto; display: block; margin: 1em auto;"></p>
+<p><span class="math inline">\((3) \Rightarrow (2)\)</span>. Let <span
+class="math inline">\(N\)</span> be a submodule of <span
+class="math inline">\(M\)</span> and <span
+class="math inline">\(K\)</span> a complement of <span
+class="math inline">\(N\)</span> in <span
+class="math inline">\(M\)</span>. Then <span class="math inline">\((N
+\oplus K) \trianglelefteq M\)</span>. Define <span
+class="math inline">\(h : N \oplus K \to Q\)</span> by <span
+class="math inline">\(h(n+k) = f(n)\)</span> for all <span
+class="math inline">\(n \in N\)</span>, <span class="math inline">\(k
+\in K\)</span>. Since <span class="math inline">\(N \cap K = 0\)</span>,
+the map <span class="math inline">\(h\)</span> is well-defined. There
+exists <span class="math inline">\(g : M \to Q\)</span> such that <span
+class="math inline">\(g_{\mid N \oplus K} = h\)</span>, and hence <span
+class="math inline">\(g_{\mid N} = h_{\mid N} = f\)</span>.</p>
+<p><img src="diagrams/diagram_2.svg" alt="Commutative diagram" style="max-width: 100%; height: auto; display: block; margin: 1em auto;"> ◻</p>
+</div>
+<div class="proposition">
+<p><strong>Proposition 3.2</strong>. <em>Let <span
+class="math inline">\((M_\alpha)_{\alpha \in \Lambda}\)</span> be a
+family of <span class="math inline">\(R\)</span>-modules and <span
+class="math inline">\(M\)</span> an <span
+class="math inline">\(R\)</span>-module. Then <span
+class="math inline">\(\displaystyle \prod_{\alpha \in \Lambda}
+M_\alpha\)</span> is <span class="math inline">\(M\)</span>-injective if
+and only if each <span class="math inline">\(M_\alpha\)</span> is <span
+class="math inline">\(M\)</span>-injective.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Let <span class="math inline">\(N\)</span> be a
+submodule of <span class="math inline">\(M\)</span>. Put <span
+class="math inline">\(P = \displaystyle\prod_{\alpha \in \Lambda}
+M_\alpha\)</span> and let <span class="math inline">\(\pi_\alpha : P \to
+M_\alpha\)</span> be the canonical projections for all <span
+class="math inline">\(\alpha \in \Lambda\)</span>.</p>
+<p><span class="math inline">\(&quot;\Leftarrow&quot;\)</span> Given a
+morphism <span class="math inline">\(f : N \to P\)</span>, the morphisms
+<span class="math inline">\(\pi_\alpha \circ f : N \to M_\alpha\)</span>
+can be extended to <span class="math inline">\(g_\alpha : M \to
+M_\alpha\)</span>. There exists <span class="math inline">\(g : M \to
+P\)</span> such that <span class="math inline">\(g_{\mid N} =
+f\)</span>.</p>
+<p><img src="diagrams/diagram_3.svg" alt="Commutative diagram" style="max-width: 100%; height: auto; display: block; margin: 1em auto;"></p>
+<p><span class="math inline">\(&quot;\Rightarrow&quot;\)</span> Let
+<span class="math inline">\(\forall \alpha \in \Lambda\)</span> and
+<span class="math inline">\(f : N \to M_\alpha\)</span>. Considering the
+canonical inclusion <span class="math inline">\(\varepsilon_\alpha :
+M_\alpha \to P\)</span>, since <span class="math inline">\(P\)</span> is
+<span class="math inline">\(M\)</span>-injective, there exists <span
+class="math inline">\(g : M \to P\)</span> which extends <span
+class="math inline">\(\varepsilon_\alpha \circ f : N \to P\)</span>.
+Then <span class="math inline">\(\varepsilon_\alpha : M_\alpha \to
+P\)</span> extends <span class="math inline">\(f\)</span> and hence
+<span class="math inline">\(M_\alpha\)</span> is <span
+class="math inline">\(M\)</span>-injective.</p>
+<p><img src="diagrams/diagram_4.svg" alt="Commutative diagram" style="max-width: 100%; height: auto; display: block; margin: 1em auto;"> ◻</p>
+</div>
+<div class="corollary">
+<p><strong>Corollary 3.3</strong>. </p>
+<ol>
+<li><p><em>Let <span class="math inline">\((Q_\alpha)_{\alpha \in
+\Lambda}\)</span> be a family of <span
+class="math inline">\(R\)</span>-modules. Then <span
+class="math inline">\(\prod_{\alpha \in \Lambda} Q_\alpha\)</span> is
+injective if and only if each <span
+class="math inline">\(Q_\alpha\)</span> is injective for every <span
+class="math inline">\(\alpha\in\Lambda\)</span>.</em></p></li>
+<li><p><em>The module <span class="math inline">\(Q_1 \oplus
+Q_2\)</span> is an injective <span
+class="math inline">\(R\)</span>-module if and only if each <span
+class="math inline">\(Q_i\)</span> is injective for <span
+class="math inline">\(i=1,2\)</span>. In particular, a direct summand of
+an injective module is injective.</em></p></li>
+</ol>
+</div>
+<div class="proposition">
+<p><strong>Proposition 3.4</strong>. <em>Let <span
+class="math inline">\(Q\)</span> be an <span
+class="math inline">\(R\)</span>-module.</em></p>
+<ol>
+<li><p><em>If <span class="math inline">\(0 \to M&#39; \xrightarrow{f} M
+\xrightarrow{g} M&#39;&#39; \to 0\)</span> is an exact sequence of <span
+class="math inline">\(R\)</span>-modules and <span
+class="math inline">\(Q\)</span> is <span
+class="math inline">\(M\)</span>-injective, then <span
+class="math inline">\(Q\)</span> is <span
+class="math inline">\(M&#39;\)</span>-injective and <span
+class="math inline">\(M&#39;&#39;\)</span>-injective.</em></p></li>
+<li><p><em>If <span class="math inline">\((M_\alpha)_{\alpha \in
+\Lambda}\)</span> is a family of submodules of <span
+class="math inline">\(M\)</span> such that <span class="math inline">\(M
+= \sum_{\alpha\in\Lambda} M_\alpha\)</span> and <span
+class="math inline">\(Q\)</span> is <span
+class="math inline">\(M_\alpha\)</span>-injective for every <span
+class="math inline">\(\alpha\)</span>, then <span
+class="math inline">\(Q\)</span> is <span
+class="math inline">\(M\)</span>-injective.</em></p></li>
+<li><p><em>Let <span
+class="math inline">\((N_\alpha)_{\alpha\in\Lambda}\)</span> be a family
+of <span class="math inline">\(R\)</span>-modules. Then <span
+class="math inline">\(Q\)</span> is <span
+class="math inline">\(\bigoplus_{\alpha\in\Lambda}
+N_\alpha\)</span>-injective if and only if <span
+class="math inline">\(Q\)</span> is <span
+class="math inline">\(N_\alpha\)</span>-injective for every <span
+class="math inline">\(\alpha\in\Lambda\)</span>.</em></p></li>
+</ol>
+</div>
+<div class="proof">
+<p><em>Proof.</em> To show that <span class="math inline">\(Q\)</span>
+is <span class="math inline">\(M&#39;\)</span>-injective, we consider
+<span class="math inline">\(N\)</span> a submodule of <span
+class="math inline">\(M&#39;\)</span> and <span
+class="math inline">\(\varphi : N \rightarrow Q\)</span> a morphism of
+<span class="math inline">\(R\)</span>-modules. Since <span
+class="math inline">\(Q\)</span> is <span
+class="math inline">\(M\)</span>-injective, there exists <span
+class="math inline">\(\phi : M \to Q\)</span> such that <span
+class="math inline">\(g \circ f\!\mid_{N} = \varphi\)</span>, and hence
+<span class="math inline">\(\psi \circ f : M&#39; \to Q\)</span> is a
+morphism which extends <span class="math inline">\(\varphi\)</span>.</p>
+<p><img src="diagrams/diagram_5.svg" alt="Commutative diagram" style="max-width: 100%; height: auto; display: block; margin: 1em auto;"></p>
+<p>Let <span class="math inline">\(h : L \to M&#39;&#39;\)</span> be a
+monomorphism. We may assume, without loss of generality, that <span
+class="math inline">\(M&#39; \le M\)</span> and <span
+class="math inline">\(M&#39;&#39; = M / M&#39;\)</span>. Since <span
+class="math inline">\(L \cong h(L) \le M&#39;&#39;\)</span>, there exist
+<span class="math inline">\(P \le M\)</span>, <span
+class="math inline">\(M&#39; \subseteq P\)</span> such that <span
+class="math inline">\(h(L) = P / M&#39;\)</span> and hence <span
+class="math inline">\(L \cong P/M&#39;\)</span>. We obtain the
+commutative diagram:</p>
+<p><img src="diagrams/diagram_6.svg" alt="Commutative diagram" style="max-width: 100%; height: auto; display: block; margin: 1em auto;"></p>
+<p>Since <span class="math inline">\(Q\)</span> is <span
+class="math inline">\(M\)</span>-injective, applying the functor <span
+class="math inline">\(\mathop{\mathrm{Hom}}(-,Q)\)</span> we obtain the
+commutative diagram:</p>
+<p><img src="diagrams/diagram_7.svg" alt="Commutative diagram" style="max-width: 100%; height: auto; display: block; margin: 1em auto;"></p>
+<p>We obtain that <span class="math inline">\(h^{*} =
+\mathop{\mathrm{Hom}}(h,Q)\)</span> is an epimorphism, which shows that
+<span class="math inline">\(Q\)</span> is <span
+class="math inline">\(M&#39;&#39;\)</span>-injective.</p>
+<p>2) Let <span class="math inline">\(N\)</span> be a submodule of <span
+class="math inline">\(M\)</span> and <span class="math inline">\(f : N
+\to Q\)</span> a morphism of <span
+class="math inline">\(R\)</span>-modules. Consider the set <span
+class="math display">\[\mathfrak{S} = \{(L,h) \mid N \le L \le M,\; h :
+L \to Q,\; h\!\mid_{N} = f\}.\]</span> Since <span
+class="math inline">\((N,f) \in \mathfrak{S}\)</span>, we have <span
+class="math inline">\(\mathfrak{S} \ne \varnothing\)</span>. Define on
+<span class="math inline">\(\mathfrak{S}\)</span> the order relation
+<span class="math inline">\((L_1,h_1) \preccurlyeq (L_2,h_2)\)</span> if
+and only if <span class="math inline">\(L_1 \le L_2\)</span> and <span
+class="math inline">\(h_2\!\mid_{L_1} = h_1\)</span>. One checks that
+<span class="math inline">\(\mathfrak{S}\)</span> is inductive and, by
+Zorn’s lemma, there exists a maximal element <span
+class="math inline">\((L_0,g_0)\)</span> of <span
+class="math inline">\(\mathfrak{S}\)</span>. To show that <span
+class="math inline">\(L_0 = M\)</span> it is enough to prove that <span
+class="math inline">\(M_\alpha \le L_0\)</span> for every <span
+class="math inline">\(\alpha \in \Lambda\)</span>.</p>
+<p>Consider the diagram
+<img src="diagrams/diagram_8.svg" alt="Commutative diagram" style="max-width: 100%; height: auto; display: block; margin: 1em auto;"></p>
+<p>from which it follows that there exists <span
+class="math inline">\(h_\alpha : M_\alpha \to Q\)</span> such that <span
+class="math inline">\(h_\alpha \circ i_\alpha = g_0 \circ
+i_\alpha\)</span>. Define <span class="math inline">\(h^{*} : L_0 +
+M_\alpha \to Q\)</span> by <span class="math inline">\(h^{*}(l +
+m_\alpha) = g_0(l) + h_\alpha(m_\alpha)\)</span>, for all <span
+class="math inline">\(l \in L_0\)</span>, <span
+class="math inline">\(m_\alpha \in M_\alpha\)</span>. If <span
+class="math inline">\(l + m_\alpha = 0\)</span>, then <span
+class="math inline">\(l = -m_\alpha \in L_0 \cap M_\alpha\)</span> and
+hence <span class="math inline">\(h^{*}(l + m_\alpha) = g_0(l) +
+h_\alpha(l)\)</span>, which shows that <span
+class="math inline">\(h^{*}\)</span> is well defined. Thus <span
+class="math inline">\((L_0 + M_\alpha, h^{*}) \in \mathfrak{S}\)</span>,
+and since <span class="math inline">\((L_0,g_0) \preccurlyeq (L_0 +
+M_\alpha, h^{*})\)</span>, by the maximality of <span
+class="math inline">\((L_0,g_0)\)</span> we obtain <span
+class="math inline">\(L_0 = L_0 + M_\alpha\)</span>, i.e. <span
+class="math inline">\(M_\alpha \le L_0\)</span> for every <span
+class="math inline">\(\alpha \in \Lambda\)</span>.</p>
+<p>3) “<span class="math inline">\(\Rightarrow\)</span>” Since <span
+class="math inline">\(N_\alpha \le N\)</span> and <span
+class="math inline">\(Q\)</span> is <span
+class="math inline">\(N\)</span>-injective, it follows that <span
+class="math inline">\(Q\)</span> is <span
+class="math inline">\(N_\alpha\)</span>-injective for every <span
+class="math inline">\(\alpha \in \Lambda\)</span>.</p>
+<p>“<span class="math inline">\(\Leftarrow\)</span>” Let <span
+class="math inline">\(N&#39;_\alpha = i_\alpha(N_\alpha)\)</span>. Since
+<span class="math inline">\(Q\)</span> is <span
+class="math inline">\(N_\alpha\)</span>-injective and <span
+class="math inline">\(N&#39;_\alpha \cong N_\alpha\)</span>, we see that
+<span class="math inline">\(Q\)</span> is <span
+class="math inline">\(N&#39;_\alpha\)</span>-injective. Now apply
+(2). ◻</p>
+</div>
+<div class="corollary">
+<p><strong>Corollary 3.5</strong>. </p>
+<ol>
+<li><p><em>The module <span class="math inline">\(Q_1 \oplus
+Q_2\)</span> is a quasi-injective <span
+class="math inline">\(R\)</span>-module if and only if each <span
+class="math inline">\(Q_i\)</span> is <span
+class="math inline">\(Q_j\)</span>-injective for all <span
+class="math inline">\(i,j = 1,2\)</span>. In particular, a direct
+summand of a quasi-injective module is quasi-injective.</em></p></li>
+<li><p><em>The module <span class="math inline">\(Q^{n}\)</span> is
+quasi-injective over <span class="math inline">\(R\)</span> if and only
+if <span class="math inline">\(Q\)</span> is
+quasi-injective.</em></p></li>
+</ol>
+</div>
+<div class="corollary">
+<p><strong>Corollary 3.6</strong>. <em>Let <span
+class="math inline">\(Q\)</span> and <span
+class="math inline">\(M\)</span> be two <span
+class="math inline">\(R\)</span>-modules. Then <span
+class="math inline">\(Q\)</span> is <span
+class="math inline">\(M\)</span>-injective if and only if <span
+class="math inline">\(Q\)</span> is <span
+class="math inline">\(mR\)</span>-injective for every <span
+class="math inline">\(m \in M\)</span>.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> The implication “<span
+class="math inline">\(\Rightarrow\)</span>” is clear.</p>
+<p>For “<span class="math inline">\(\Leftarrow\)</span>”, since <span
+class="math inline">\(M = \sum_{m \in M} mR\)</span>, it follows from
+2.1.4(2) that <span class="math inline">\(Q\)</span> is <span
+class="math inline">\(M\)</span>-injective. ◻</p>
+</div>
+<div id="thm:Baer-en" class="theorem">
+<p><strong>Theorem 3.7</strong> (Baer’s criterion). <em>For an <span
+class="math inline">\(R\)</span>-module <span
+class="math inline">\(Q\)</span> the following statements are
+equivalent:</em></p>
+<ol>
+<li><p><em><span class="math inline">\(Q\)</span> is
+injective.</em></p></li>
+<li><p><em><span class="math inline">\(Q\)</span> is <span
+class="math inline">\(R\)</span>-injective.</em></p></li>
+<li><p><em>For every right ideal <span class="math inline">\(I\)</span>
+of <span class="math inline">\(R\)</span> and every morphism <span
+class="math inline">\(f : I \to Q\)</span> there exists <span
+class="math inline">\(x \in Q\)</span> such that <span
+class="math inline">\(f(a) = xa\)</span> for all <span
+class="math inline">\(a \in I\)</span>.</em></p></li>
+</ol>
+</div>
+<div class="proof">
+<p><em>Proof.</em> The implication <span class="math inline">\((1)
+\Rightarrow (2)\)</span> is obvious.</p>
+<p><span class="math inline">\((2) \Rightarrow (1)\)</span>. Let <span
+class="math inline">\(M\)</span> be an <span
+class="math inline">\(R\)</span>-module and <span
+class="math inline">\(x \in M\)</span>. Since <span
+class="math inline">\(\varphi_x : R \to xR\)</span>, <span
+class="math inline">\(\varphi_x(a) = xa\)</span> for all <span
+class="math inline">\(a \in R\)</span>, is a surjective morphism of
+<span class="math inline">\(R\)</span>-modules, it follows that <span
+class="math inline">\(R / \mathop{\mathrm{Ker}}\varphi_x \cong
+xR\)</span>. As <span class="math inline">\(Q\)</span> is <span
+class="math inline">\(R\)</span>-injective, 2.1.4(1) implies that <span
+class="math inline">\(Q\)</span> is <span class="math inline">\(R /
+\mathop{\mathrm{Ker}}\varphi_x\)</span>-injective, and hence <span
+class="math inline">\(Q\)</span> is <span
+class="math inline">\(xR\)</span>-injective for every <span
+class="math inline">\(x \in M\)</span>. Therefore, by 2.1.6 we obtain
+that <span class="math inline">\(Q\)</span> is <span
+class="math inline">\(M\)</span>-injective.</p>
+<p><span class="math inline">\((2) \Rightarrow (3)\)</span>. Let <span
+class="math inline">\(I\)</span> be a right ideal of <span
+class="math inline">\(R\)</span> and <span class="math inline">\(f : I
+\to Q\)</span>. There exists <span class="math inline">\(g : R \to
+Q\)</span> such that <span class="math inline">\(g\!\mid_{I} =
+f\)</span>. Put <span class="math inline">\(x = g(1) \in Q\)</span>.
+Then <span class="math inline">\(f(a) = g(a) = ag(1) = xa\)</span> for
+all <span class="math inline">\(a \in I\)</span>.</p>
+<p><span class="math inline">\((3) \Rightarrow (2)\)</span>. Suppose
+that for a morphism <span class="math inline">\(f : I \to Q\)</span>
+there exists <span class="math inline">\(x \in Q\)</span> with <span
+class="math inline">\(f(a) = xa\)</span> for all <span
+class="math inline">\(a \in I\)</span>. Define <span
+class="math inline">\(g : R \to Q\)</span> by <span
+class="math inline">\(g(r) = xr\)</span> for all <span
+class="math inline">\(r \in R\)</span>. Then clearly <span
+class="math inline">\(g\!\mid_{I} = f\)</span>. ◻</p>
+</div>
+<div class="definition">
+<p><strong>Definition 3.8</strong>. </p>
+<ol>
+<li><p>An <span class="math inline">\(R\)</span>-module <span
+class="math inline">\(Q\)</span> is called <em>divisible</em> if for
+every <span class="math inline">\(y \in Q\)</span> and every <span
+class="math inline">\(a \in R\)</span> which is not a zero divisor,
+there exists <span class="math inline">\(x \in Q\)</span> such that
+<span class="math inline">\(ax = y\)</span>. It is easily seen that any
+factor module of a divisible module is divisible.</p></li>
+<li><p>A commutative integral domain is called a <em>PID ring</em>
+(principal ideal domain) if every ideal of it is principal.</p></li>
+</ol>
+</div>
+<div class="proposition">
+<p><strong>Proposition 3.9</strong>. </p>
+<ol>
+<li><p><em>Every injective module is divisible.</em></p></li>
+<li><p><em>Let <span class="math inline">\(R\)</span> be a PID.</em></p>
+<ol>
+<li><p><em>If <span class="math inline">\(Q\)</span> is an <span
+class="math inline">\(R\)</span>-module, then <span
+class="math inline">\(Q\)</span> is injective if and only if it is
+divisible.</em></p></li>
+<li><p><em>If <span class="math inline">\(I\)</span> is a non-zero ideal
+of <span class="math inline">\(R\)</span>, then <span
+class="math inline">\(R/I\)</span> is a quasi-injective <span
+class="math inline">\(R\)</span>-module. In particular, <span
+class="math inline">\(\mathbb{Z}_n\)</span> is a quasi-injective <span
+class="math inline">\(\mathbb{Z}\)</span>-module for every <span
+class="math inline">\(n \ge 1\)</span>.</em></p></li>
+</ol></li>
+</ol>
+</div>
+<div class="proof">
+<p><em>Proof.</em> ) Let <span class="math inline">\(Q\)</span> be a
+divisible <span class="math inline">\(R\)</span>-module, <span
+class="math inline">\(y \in Q\)</span> and <span class="math inline">\(a
+\in R\)</span> a non–zero divisor. Define <span class="math inline">\(f
+: aR \to Q\)</span> by <span class="math inline">\(f(ax) = yx\)</span>
+for all <span class="math inline">\(x \in R\)</span>. Since <span
+class="math inline">\(a\)</span> is not a zero divisor, <span
+class="math inline">\(f\)</span> is well defined. By Baer’s criterion
+there exists <span class="math inline">\(x \in Q\)</span> such that
+<span class="math inline">\(f(\lambda) = x\lambda\)</span> for all <span
+class="math inline">\(\lambda \in aR\)</span>. In particular <span
+class="math inline">\(y = f(a) = f(a\cdot 1) = xa\)</span>; hence <span
+class="math inline">\(Q\)</span> is divisible.</p>
+<p>)(i) The implication “<span
+class="math inline">\(\Rightarrow\)</span>” follows immediately from
+(1).</p>
+<p>“<span class="math inline">\(\Leftarrow\)</span>” Let <span
+class="math inline">\(Q\)</span> be a divisible <span
+class="math inline">\(R\)</span>-module and <span
+class="math inline">\(I\)</span> a right ideal of <span
+class="math inline">\(R\)</span>. Then there exists <span
+class="math inline">\(a \in R\)</span> with <span
+class="math inline">\(I = aR\)</span>. Given a morphism of <span
+class="math inline">\(R\)</span>-modules <span class="math inline">\(f :
+I \to Q\)</span>, choose <span class="math inline">\(x \in Q\)</span>
+with <span class="math inline">\(f(a) = xa\)</span>. For any <span
+class="math inline">\(r \in R\)</span>, <span
+class="math inline">\(f(ar) = f(a)r = xar\)</span>, so by Baer’s
+criterion <span class="math inline">\(Q\)</span> is injective.</p>
+<p>)(ii) Let <span class="math inline">\(I = aR\)</span> and <span
+class="math inline">\(J = bR\)</span> be non-zero ideals of <span
+class="math inline">\(R\)</span> with <span class="math inline">\(I
+\subseteq J\)</span>, and let <span class="math inline">\(f : J/I \to
+R/I\)</span> be a morphism of <span
+class="math inline">\(R\)</span>-modules. There exists <span
+class="math inline">\(c \in R\)</span> such that <span
+class="math inline">\(a = bc\)</span>. Write <span
+class="math inline">\(f(\widehat{b}) = \widehat{x} \in R/I\)</span>.
+Then <span class="math inline">\(xc \in I = aR\)</span>, so there is
+<span class="math inline">\(a_1 \in R\)</span> with <span
+class="math inline">\(xc = aa_1\)</span>, and hence <span
+class="math inline">\(x = ba_1\)</span>.</p>
+<p>Define <span class="math inline">\(g : R/I \to R/I\)</span> by <span
+class="math inline">\(g(\widehat{r}) = \widehat{a_1 r}\)</span> for all
+<span class="math inline">\(r \in R\)</span>. Then <span
+class="math inline">\(g\)</span> is an <span
+class="math inline">\(R\)</span>-module homomorphism and <span
+class="math inline">\(g(\widehat{b}) = \widehat{x}\)</span>, so <span
+class="math inline">\(g\!\mid_{J/I} = f\)</span>. Thus <span
+class="math inline">\(R/I\)</span> is quasi-injective. In particular,
+for <span class="math inline">\(R = \mathbb{Z}\)</span> and <span
+class="math inline">\(I = n\mathbb{Z}\)</span> we obtain that <span
+class="math inline">\(\mathbb{Z}_n\)</span> is a quasi-injective <span
+class="math inline">\(\mathbb{Z}\)</span>-module for every <span
+class="math inline">\(n \ge 1\)</span>. ◻</p>
+</div>
+<div class="corollary">
+<p><strong>Corollary 3.10</strong>. <em>An abelian group <span
+class="math inline">\(G\)</span> is an injective <span
+class="math inline">\(\mathbb{Z}\)</span>-module if and only if <span
+class="math inline">\(G\)</span> is divisible.</em></p>
+</div>
+<div class="corollary">
+<p><strong>Corollary 3.11</strong>. </p>
+<ol>
+<li><p><em><span class="math inline">\(\mathbb{Q}\)</span> and <span
+class="math inline">\(\mathbb{Z}_{p^\infty}\)</span> are injective <span
+class="math inline">\(\mathbb{Z}\)</span>-modules.</em></p></li>
+<li><p><em>Any direct sum of injective <span
+class="math inline">\(\mathbb{Z}\)</span>-modules is an injective <span
+class="math inline">\(\mathbb{Z}\)</span>-module.</em></p></li>
+<li><p><em>Any factor group of an injective <span
+class="math inline">\(\mathbb{Z}\)</span>-module is
+injective.</em></p></li>
+</ol>
+</div>
+<div class="lemma">
+<p><strong>Lemma 3.12</strong>. <em>Let <span
+class="math inline">\(A,S,T\)</span> be rings and let <span
+class="math inline">\({}_{A}M_{S}, {}_{A}N_{T}\)</span> be bimodules.
+Then <span class="math inline">\(\mathop{\mathrm{Hom}}_A(M,N)\)</span>
+has a structure of left <span class="math inline">\(S\)</span>-module
+and right <span class="math inline">\(T\)</span>-module given by <span
+class="math display">\[(s \cdot f)(x) = f(xs), \qquad (f \cdot t)(x) =
+f(x)t,\]</span> for <span class="math inline">\(s \in S\)</span>, <span
+class="math inline">\(t \in T\)</span>, <span class="math inline">\(x
+\in M\)</span>, <span class="math inline">\(f \in
+\mathop{\mathrm{Hom}}_A(M,N)\)</span>.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Let <span class="math inline">\(a,b \in A\)</span>
+and <span class="math inline">\(x,y \in M\)</span>. Then <span
+class="math display">\[(s \cdot f)(ax+by) = f((ax+by)s)
+   = f((ax)s) + f((by)s)
+   = af(xs) + bf(ys)
+   = a(s \cdot f)(x) + b(s \cdot f)(y),\]</span> so <span
+class="math inline">\(s \cdot f \in
+\mathop{\mathrm{Hom}}_A(M,N)\)</span>. Similarly <span
+class="math inline">\(f \cdot t \in
+\mathop{\mathrm{Hom}}_A(M,N)\)</span>.</p>
+<p>For <span class="math inline">\(s,s&#39; \in S\)</span> and <span
+class="math inline">\(f,g \in \mathop{\mathrm{Hom}}_A(M,N)\)</span> we
+have <span class="math display">\[\begin{align}
+(s \cdot (f+g))(x)
+   &amp;= (f+g)(xs)
+    = f(xs)+g(xs)
+    = (s \cdot f)(x)+(s \cdot g)(x),
+    \tag{1} \\
+((s+s&#39;) \cdot f)(x)
+   &amp;= f(x(s+s&#39;))
+    = f(xs+xs&#39;)
+    = f(xs)+f(xs&#39;)
+    = (s \cdot f)(x)+(s&#39; \cdot f)(x),
+    \tag{2} \\
+((ss&#39;) \cdot f)(x)
+   &amp;= f(xss&#39;)
+    = f((xs)s&#39;)
+    = (s&#39; \cdot f)(xs)
+    = (s \cdot (s&#39; \cdot f))(x),
+    \tag{3} \\
+(1_S \cdot f)(x)
+   &amp;= f(x1_S) = f(x).
+    \tag{4}
+\end{align}\]</span> From (1)–(4) we see that <span
+class="math inline">\(\mathop{\mathrm{Hom}}_A(M,N)\)</span> is a left
+<span class="math inline">\(S\)</span>-module. A similar computation
+shows that <span
+class="math inline">\(\mathop{\mathrm{Hom}}_A(M,N)\)</span> is a right
+<span class="math inline">\(T\)</span>-module. Moreover, <span
+class="math inline">\(((s \cdot f) \cdot t)(x) = (s \cdot f)(xt) =
+f(xts)t\)</span> and <span class="math inline">\((s \cdot (f \cdot
+t))(x) = f(xts)t\)</span>, so the two actions commute and <span
+class="math inline">\(\mathop{\mathrm{Hom}}_A(M,N)\)</span> is an <span
+class="math inline">\(S\)</span>–<span class="math inline">\(T\)</span>
+bimodule. ◻</p>
+</div>
+<div class="proposition">
+<p><strong>Proposition 3.13</strong> (Eckmann–Schopf). <em>Let <span
+class="math inline">\(Q\)</span> be a divisible abelian group. Then the
+left <span class="math inline">\(R\)</span>-module <span
+class="math inline">\(\mathop{\mathrm{Hom}}_{\mathbb{Z}}(R,Q)\)</span>
+is injective.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> By the previous lemma, <span
+class="math inline">\(\mathop{\mathrm{Hom}}_{\mathbb{Z}}(R,Q)\)</span>
+carries a structure of left <span
+class="math inline">\(R\)</span>–module given by <span
+class="math display">\[(r \cdot f)(a) = f(ar), \qquad \forall a,r \in
+R,\ f \in \mathop{\mathrm{Hom}}_{\mathbb{Z}}(R,Q).\]</span> Let <span
+class="math inline">\(I\)</span> be a left ideal of <span
+class="math inline">\(R\)</span> and <span class="math inline">\(h : I
+\to \mathop{\mathrm{Hom}}_{\mathbb{Z}}(R,Q)\)</span> a morphism of left
+<span class="math inline">\(R\)</span>–modules. Define <span
+class="math display">\[\gamma : \mathbb{Z}I \longrightarrow \mathbb{Z}Q,
+\qquad
+\gamma(a) = h(a)(1).\]</span> Then <span
+class="math inline">\(\gamma\)</span> is a morphism of <span
+class="math inline">\(\mathbb{Z}\)</span>–modules. Since <span
+class="math inline">\(Q\)</span> is <span
+class="math inline">\(\mathbb{Z}\)</span>–injective, there exists <span
+class="math inline">\(\widetilde{\gamma} : \mathbb{Z}R \to
+\mathbb{Z}Q\)</span> such that <span
+class="math inline">\(\widetilde{\gamma}_{\mid I} = \gamma\)</span>. For
+<span class="math inline">\(a \in I\)</span> and <span
+class="math inline">\(r \in R\)</span> we have <span
+class="math display">\[(a \cdot \widetilde{\gamma})(r)
+  = \widetilde{\gamma}(ra)
+  = h(ra)(1)
+  = (r \cdot h(a))(1)
+  = h(a)(r),\]</span> hence <span class="math inline">\(h(a) = a \cdot
+\widetilde{\gamma}\)</span> for all <span class="math inline">\(a \in
+I\)</span>. By Baer’s criterion, <span
+class="math inline">\(\mathop{\mathrm{Hom}}_{\mathbb{Z}}(R,Q)\)</span>
+is an injective left <span
+class="math inline">\(R\)</span>–module. ◻</p>
+</div>
+<div class="proposition">
+<p><strong>Proposition 3.14</strong>. <em>Every left <span
+class="math inline">\(R\)</span>–module <span
+class="math inline">\(M\)</span> can be embedded into an injective left
+<span class="math inline">\(R\)</span>–module.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> There exists a free abelian group <span
+class="math inline">\(\mathbb{Z}^{(A)}\)</span> and a surjective <span
+class="math inline">\(\mathbb{Z}\)</span>–morphism <span
+class="math inline">\(f : \mathbb{Z}^{(A)} \to M\)</span>. Hence <span
+class="math display">\[\mathbb{Z}M \cong \mathbb{Z}^{(A)}/\ker f
+  \subseteq \mathbb{Q}^{(A)}/\ker f,\]</span> and therefore there is a
+divisible abelian group <span class="math inline">\(G\)</span> with
+<span class="math inline">\(\mathbb{Z}M \subseteq \mathbb{Z}G\)</span>.
+Applying the functor <span
+class="math inline">\(\mathop{\mathrm{Hom}}_{\mathbb{Z}}(R,-)\)</span>
+we obtain a monomorphism <span class="math display">\[{}_R M \cong
+\mathop{\mathrm{Hom}}_{\mathbb{Z}}(R,M)
+   \hookrightarrow \mathop{\mathrm{Hom}}_{\mathbb{Z}}(R,G).\]</span>
+Since <span class="math inline">\(G\)</span> is divisible,
+Proposition 2.1.13 implies that <span
+class="math inline">\(\mathop{\mathrm{Hom}}_{\mathbb{Z}}(R,G)\)</span>
+is an injective left <span class="math inline">\(R\)</span>–module. Thus
+<span class="math inline">\(M\)</span> embeds into an injective left
+<span class="math inline">\(R\)</span>–module. ◻</p>
+</div>
+<div class="proposition">
+<p><strong>Proposition 3.15</strong>. <em>Let <span
+class="math inline">\(Q\)</span> be an <span
+class="math inline">\(R\)</span>–module. Then <span
+class="math inline">\(Q\)</span> is injective if and only if every short
+exact sequence <span class="math display">\[0 \longrightarrow Q
+\xrightarrow{f} M \xrightarrow{g} M&#39; \longrightarrow 0\]</span>
+splits.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> “<span class="math inline">\(\Rightarrow\)</span>”.
+Assume <span class="math inline">\(Q\)</span> is injective. Exactness
+implies that <span class="math inline">\(f\)</span> is a monomorphism.
+By injectivity of <span class="math inline">\(Q\)</span> there exists
+<span class="math inline">\(h : M \to Q\)</span> with <span
+class="math inline">\(h f = \mathrm{id}_Q\)</span>, hence the sequence
+splits.</p>
+<p>“<span class="math inline">\(\Leftarrow\)</span>”. By
+Proposition 2.1.14 there is an injective <span
+class="math inline">\(R\)</span>–module <span
+class="math inline">\(Q&#39;\)</span> and a monomorphism <span
+class="math inline">\(i : Q \to Q&#39;\)</span>. Consider the exact
+sequence <span class="math display">\[0 \longrightarrow Q
+\xrightarrow{i} Q&#39; \longrightarrow Q&#39;/i(Q) \longrightarrow
+0.\]</span> By the hypothesis this sequence splits, so <span
+class="math inline">\(Q\)</span> is a direct summand of <span
+class="math inline">\(Q&#39;\)</span>. A direct summand of an injective
+module is injective, therefore <span class="math inline">\(Q\)</span> is
+injective. ◻</p>
+</div>
+<h2 id="injective-envelopes">Injective envelopes</h2>
+<div class="definition">
+<p><strong>Definition 3.16</strong>. Let <span
+class="math inline">\(M\)</span> be an <span
+class="math inline">\(R\)</span>–module. A pair <span
+class="math inline">\((E,i)\)</span> is called an <em>injective
+envelope</em> of <span class="math inline">\(M\)</span> if <span
+class="math inline">\(E\)</span> is injective and <span
+class="math inline">\(i : M \to E\)</span> is an essential
+monomorphism.</p>
+</div>
+<div class="proposition">
+<p><strong>Proposition 3.17</strong>. <em>Let <span
+class="math inline">\(Q\)</span> be an injective <span
+class="math inline">\(R\)</span>–module. Then every complement submodule
+of <span class="math inline">\(Q\)</span> is a direct summand of <span
+class="math inline">\(Q\)</span>.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Let <span class="math inline">\(K\)</span> be a
+submodule of <span class="math inline">\(Q\)</span> and <span
+class="math inline">\(N\)</span> a complement of <span
+class="math inline">\(K\)</span> in <span
+class="math inline">\(Q\)</span>, that is, <span class="math inline">\(K
+\cap N = 0\)</span> and <span class="math inline">\(K+N\)</span> is an
+essential submodule of <span class="math inline">\(Q\)</span>. Then
+<span class="math inline">\((K+N)/N \cong Q/N\)</span>. Define <span
+class="math inline">\(g : (K+N)/N \to Q\)</span> by <span
+class="math display">\[g((x+y)+N) = x, \qquad x \in K,\ y \in
+N.\]</span> Since <span class="math inline">\(K \cap N = 0\)</span>,
+<span class="math inline">\(g\)</span> is well defined and injective. As
+<span class="math inline">\(Q\)</span> is injective, there exists <span
+class="math inline">\(h : Q/N \to Q\)</span> with <span
+class="math inline">\(h_{\mid (K+N)/N} = g\)</span>. Because <span
+class="math inline">\((K+N)/N \cong Q/N\)</span> and <span
+class="math inline">\(g\)</span> is a monomorphism, <span
+class="math inline">\(h\)</span> is also a monomorphism. We have <span
+class="math inline">\(K = \mathrm{Im}\,g = h((K+N)/N) \subseteq
+h(Q/N)\)</span>. As <span class="math inline">\(K\)</span> is a closed
+submodule, it follows that <span class="math inline">\(K =
+h(Q/N)\)</span>. Since <span class="math inline">\(h\)</span> is a
+monomorphism, <span class="math inline">\((K+N)/N = Q/N\)</span>, hence
+<span class="math inline">\(K+N = Q\)</span>. Thus <span
+class="math inline">\(K\)</span> is a direct summand of <span
+class="math inline">\(Q\)</span>. ◻</p>
+</div>
+<div class="theorem">
+<p><strong>Theorem 3.18</strong> (Eckmann–Schopf). <em>Every <span
+class="math inline">\(R\)</span>–module <span
+class="math inline">\(M\)</span> has an injective envelope, unique up to
+isomorphism.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> By Proposition 2.1.14 there exists an injective <span
+class="math inline">\(R\)</span>–module <span
+class="math inline">\(Q\)</span> with <span class="math inline">\(M \le
+Q\)</span>. Let <span class="math inline">\(E\)</span> be a maximal
+essential extension of <span class="math inline">\(M\)</span> in <span
+class="math inline">\(Q\)</span>. Then <span
+class="math inline">\(E\)</span> is a complement submodule of <span
+class="math inline">\(Q\)</span>, and by the previous proposition <span
+class="math inline">\(E\)</span> is injective. Hence <span
+class="math inline">\((E,i)\)</span>, where <span
+class="math inline">\(i : M \hookrightarrow E\)</span> is the inclusion,
+is an injective envelope of <span class="math inline">\(M\)</span>.</p>
+<p>For uniqueness, let <span class="math inline">\((E_1,i_1)\)</span>
+and <span class="math inline">\((E_2,i_2)\)</span> be two injective
+envelopes of <span class="math inline">\(M\)</span>. Since <span
+class="math inline">\(E_2\)</span> is injective, there exists <span
+class="math inline">\(f : E_1 \to E_2\)</span> with <span
+class="math inline">\(f i_1 = i_2\)</span>. The map <span
+class="math inline">\(i_2\)</span> is a monomorphism and <span
+class="math inline">\(i_1\)</span> is an essential monomorphism, so
+(using 1.4) <span class="math inline">\(f\)</span> is a monomorphism.
+Thus <span class="math inline">\(E_1 \cong f(E_1)\)</span> and <span
+class="math inline">\(E_2 = f(E_1) \oplus E_3\)</span> for some
+submodule <span class="math inline">\(E_3\)</span>. But <span
+class="math inline">\(i_2(M) \subseteq f(E_1)\)</span>, hence <span
+class="math inline">\(i_2(M) \cap E_3 = 0\)</span>. Since <span
+class="math inline">\(i_2\)</span> is essential, we must have <span
+class="math inline">\(E_3 = 0\)</span>, so <span
+class="math inline">\(E_2 = f(E_1)\)</span> and <span
+class="math inline">\(f\)</span> is an isomorphism. ◻</p>
+</div>
+<p>In practice we fix one representative of this isomorphism class and
+denote it by <span class="math inline">\(E(M)\)</span>, with <span
+class="math inline">\(M \trianglelefteq E(M)\)</span>.</p>
+<div class="proposition">
+<p><strong>Proposition 3.19</strong>. <em>Let <span
+class="math inline">\(M\)</span> be an <span
+class="math inline">\(R\)</span>–module and <span
+class="math inline">\(i : M \to Q\)</span> a monomorphism with <span
+class="math inline">\(Q_R\)</span> injective. The following statements
+are equivalent:</em></p>
+<ol>
+<li><p><em><span class="math inline">\((Q,i)\)</span> is an injective
+envelope of <span class="math inline">\(M\)</span>;</em></p></li>
+<li><p><em>for every monomorphism <span class="math inline">\(f : M \to
+Q&#39;\)</span> with <span class="math inline">\(Q&#39;\)</span>
+injective, there exists a monomorphism <span class="math inline">\(g : Q
+\to Q&#39;\)</span> such that <span class="math inline">\(g i =
+f\)</span>.</em></p></li>
+</ol>
+</div>
+<div class="proof">
+<p><em>Proof.</em> <span class="math inline">\((1) \Rightarrow
+(2)\)</span>. Let <span class="math inline">\(f : M \to Q&#39;\)</span>
+be a monomorphism with <span class="math inline">\(Q&#39;\)</span>
+injective. By injectivity of <span class="math inline">\(Q&#39;\)</span>
+there is <span class="math inline">\(u : Q \to Q&#39;\)</span> with
+<span class="math inline">\(u i = f\)</span>. Because <span
+class="math inline">\(i\)</span> is an essential monomorphism and <span
+class="math inline">\(Q&#39;\)</span> is injective, the image <span
+class="math inline">\(u(Q)\)</span> is a complement of <span
+class="math inline">\(f(M)\)</span>; by the definition of injective
+envelope this forces <span class="math inline">\(u\)</span> to be a
+monomorphism. Set <span class="math inline">\(g = u\)</span>.</p>
+<p><span class="math inline">\((2) \Rightarrow (1)\)</span>. Let <span
+class="math inline">\((E(M),j)\)</span> be an injective envelope of
+<span class="math inline">\(M\)</span>. Applying (2) to <span
+class="math inline">\(f=j\)</span> we obtain a monomorphism <span
+class="math inline">\(g : Q \to E(M)\)</span> with <span
+class="math inline">\(g i = j\)</span>. Since <span
+class="math inline">\(j\)</span> is an essential monomorphism, it
+follows that <span class="math inline">\(i\)</span> is also essential;
+hence <span class="math inline">\((Q,i)\)</span> is an injective
+envelope of <span class="math inline">\(M\)</span>. ◻</p>
+</div>
+<div class="proposition">
+<p><strong>Proposition 3.20</strong>. <em>For any family of right <span
+class="math inline">\(R\)</span>–modules <span
+class="math inline">\(M_1,M_2,\dots,M_n\)</span> we have <span
+class="math display">\[E\!\left(\bigoplus_{i=1}^{n} M_i\right)
+  \cong \bigoplus_{i=1}^{n} E(M_i).\]</span></em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> By 1.9, <span
+class="math inline">\(\bigoplus_{i=1}^{n} E(M_i)\)</span> is an
+essential extension of <span class="math inline">\(\bigoplus_{i=1}^{n}
+M_i\)</span>. Moreover, <span class="math display">\[\bigoplus_{i=1}^{n}
+E(M_i) \cong \prod_{i=1}^{n} E(M_i),\]</span> so by 2.1.3 the module
+<span class="math inline">\(\bigoplus_{i=1}^{n} E(M_i)\)</span> is
+injective. By uniqueness of injective envelopes we obtain <span
+class="math display">\[E\!\left(\bigoplus_{i=1}^{n} M_i\right)
+  \cong \bigoplus_{i=1}^{n} E(M_i).\]</span> ◻</p>
+</div>
+<div class="theorem">
+<p><strong>Theorem 3.21</strong>. <em>Let <span
+class="math inline">\(Q\)</span> and <span
+class="math inline">\(M\)</span> be two <span
+class="math inline">\(R\)</span>-modules. Then <span
+class="math inline">\(Q\)</span> is <span
+class="math inline">\(M\)</span>-injective if and only if <span
+class="math inline">\(f(M) \subseteq Q\)</span> for every <span
+class="math inline">\(f \in
+\mathop{\mathrm{Hom}}(E(M),E(Q))\)</span>.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> “<span class="math inline">\(\Rightarrow\)</span>”
+Let <span class="math inline">\(f \in
+\mathop{\mathrm{Hom}}(E(M),E(Q))\)</span> and set <span
+class="math display">\[K := \{\,m \in M \mid f(m) \in Q\,\}.\]</span>
+Since <span class="math inline">\(Q\)</span> is <span
+class="math inline">\(M\)</span>-injective, there exists a morphism
+<span class="math inline">\(\bar{f} : M \to Q\)</span> such that <span
+class="math inline">\(\bar{f}\!\mid_{K} = f\!\mid_{K}\)</span>. We claim
+that <span class="math display">\[Q \cap (\bar{f}-f)(M) = 0.\]</span>
+Take <span class="math inline">\(x \in Q\)</span> and <span
+class="math inline">\(m \in M\)</span> with <span
+class="math inline">\(x = (\bar{f}-f)(m)\)</span>. Then <span
+class="math display">\[f(m) = \bar{f}(m) - x \in Q,\]</span> so <span
+class="math inline">\(m \in K\)</span>. Hence <span
+class="math display">\[x = \bar{f}(m) - f(m) = f(m) - f(m) = 0,\]</span>
+and therefore <span class="math inline">\(Q \cap (\bar{f}-f)(M) =
+0\)</span>. Since <span class="math inline">\(Q\)</span> is an essential
+submodule of <span class="math inline">\(E(Q)\)</span>, it follows that
+<span class="math inline">\((\bar{f}-f)(M) = 0\)</span>. Thus <span
+class="math inline">\(f(M) = \bar{f}(M) \subseteq Q\)</span>.</p>
+<p>“<span class="math inline">\(\Leftarrow\)</span>” As <span
+class="math inline">\(E(Q)\)</span> is injective, it is enough to work
+with <span class="math inline">\(f \in
+\mathop{\mathrm{Hom}}(M,E(Q))\)</span>. Let <span
+class="math inline">\(N\)</span> be a submodule of <span
+class="math inline">\(M\)</span> and <span class="math inline">\(g : N
+\to Q\)</span> a morphism of <span
+class="math inline">\(R\)</span>-modules. Because <span
+class="math inline">\(E(Q)\)</span> is injective, there exists <span
+class="math inline">\(\tilde{g} : M \to E(Q)\)</span> such that <span
+class="math inline">\(\tilde{g}\!\mid_{N} = i \circ g\)</span>, where
+<span class="math inline">\(i : Q \to E(Q)\)</span> is the canonical
+injection. By hypothesis, <span class="math inline">\(\tilde{g}(M)
+\subseteq Q\)</span>, so identifying <span
+class="math inline">\(\tilde{g}\)</span> with its corestriction to <span
+class="math inline">\(Q\)</span> we obtain a morphism <span
+class="math inline">\(h : M \to Q\)</span> with <span
+class="math inline">\(h\!\mid_{N} = g\)</span>. Therefore <span
+class="math inline">\(Q\)</span> is <span
+class="math inline">\(M\)</span>-injective. ◻</p>
+</div>
+<div class="corollary">
+<p><strong>Corollary 3.22</strong>. <em>An <span
+class="math inline">\(R\)</span>-module <span
+class="math inline">\(Q\)</span> is quasi-injective if and only if <span
+class="math inline">\(f(Q) \subseteq Q\)</span> for every <span
+class="math inline">\(f \in
+\mathop{\mathrm{End}}(E(Q))\)</span>.</em></p>
+</div>
+<div class="theorem">
+<p><strong>Theorem 3.23</strong> (Matlis–Bass). <em>Let <span
+class="math inline">\(R\)</span> be a ring. Then <span
+class="math inline">\(R\)</span> is right noetherian if and only if, for
+every simple right <span class="math inline">\(R\)</span>-module <span
+class="math inline">\(S_i\)</span> (<span class="math inline">\(i \geq
+1\)</span>), <span class="math display">\[Q := \bigoplus_{i=1}^{\infty}
+E(S_i)\]</span> is an injective right <span
+class="math inline">\(R\)</span>-module.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> “<span class="math inline">\(\Rightarrow\)</span>”
+Let <span class="math inline">\(L\)</span> be a right ideal of <span
+class="math inline">\(R\)</span>, <span class="math display">\[Q =
+\bigoplus_{i=1}^{\infty} E(S_i)\]</span> and let <span
+class="math inline">\(f : L \to Q\)</span> be a morphism of right <span
+class="math inline">\(R\)</span>-modules. There exist elements <span
+class="math inline">\(a_1,\dots,a_n \in L\)</span> such that <span
+class="math display">\[L = a_1 R + a_2 R + \cdots + a_n R.\]</span>
+Clearly, there is <span class="math inline">\(m \geq 1\)</span> with
+<span class="math inline">\(f(a_k) \in \bigoplus_{j=1}^{m}
+E(S_j)\)</span> for all <span class="math inline">\(k =
+1,\dots,n\)</span>, hence <span class="math display">\[\Im f \subseteq
+\bigoplus_{j=1}^{m} E(S_j).\]</span> Since <span
+class="math inline">\(\bigoplus_{j=1}^{m} E(S_j)\)</span> is injective,
+there exists <span class="math inline">\(g : R \to \bigoplus_{j=1}^{m}
+E(S_j)\)</span> such that <span class="math inline">\(g\!\mid_{L} =
+f\)</span>. Let <span class="math inline">\(\bar{f} = i \circ
+g\)</span>, where <span class="math inline">\(i : \bigoplus_{j=1}^{m}
+E(S_j) \to Q\)</span> is the canonical injection. Then <span
+class="math inline">\(\bar{f}\!\mid_{L} = f\)</span>, so <span
+class="math inline">\(Q\)</span> is injective.</p>
+<p>“<span class="math inline">\(\Leftarrow\)</span>” Suppose that <span
+class="math inline">\(R\)</span> is not right noetherian. Then there
+exists a strictly ascending chain of finitely generated right ideals:
+<span class="math display">\[L_1 \subsetneq L_2 \subsetneq \cdots
+\subsetneq L_n \subsetneq \cdots .\]</span> By Krull’s lemma, for every
+<span class="math inline">\(n \geq 1\)</span> there exists a maximal
+submodule <span class="math inline">\(M_n \subsetneq L_n\)</span> such
+that <span class="math display">\[L_{n-1} \subseteq M_n \quad \text{for
+all } n \geq 2.\]</span> Set <span class="math display">\[L :=
+\bigcup_{k=1}^{\infty} L_k, \qquad
+\pi_k : L_k \longrightarrow L_k/M_k\]</span> for the canonical
+projections, and put <span class="math display">\[E_k := E(L_k/M_k)
+\quad \text{for each } k \geq 1.\]</span> Then <span
+class="math display">\[E := \bigoplus_{k=1}^{\infty} E_k\]</span> is
+injective, and <span class="math display">\[f : L \longrightarrow E,
+\qquad
+f(a) = \sum_{k=1}^{\infty} \pi_k(a)\]</span> is well defined. There
+exists an element <span class="math inline">\(x \in E_1 \oplus \cdots
+\oplus E_n\)</span> such that <span class="math inline">\(f(a) = x
+a\)</span> for all <span class="math inline">\(a \in L\)</span>. It
+follows that <span class="math inline">\(\pi_k(a) = 0\)</span> for every
+<span class="math inline">\(k \geq n+1\)</span>, that is, <span
+class="math inline">\(a \in M_k\)</span> for all <span
+class="math inline">\(k \geq n+1\)</span>. Hence <span
+class="math display">\[L \subseteq M_{n+1} \subsetneq L_{n+1} \subseteq
+M_{n+2} \subsetneq L_{n+2}
+\subseteq \cdots \subseteq L,\]</span> a contradiction. Therefore <span
+class="math inline">\(R\)</span> is right noetherian. ◻</p>
+</div>
+</body>
+</html>
