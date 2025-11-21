@@ -89,6 +89,12 @@ $PANDOC_PATH "$LATEX_SOURCE" \
   --lua-filter=tikzcd-filter.lua \
   -o docs/index.html
 
+# Add favicon to HTML
+echo "Adding favicon..."
+sed -i.bak 's|</head>|  <link rel="icon" type="image/svg+xml" href="favicon.svg">\
+</head>|' docs/index.html
+rm docs/index.html.bak
+
 echo "✅ HTML generated: docs/index.html"
 echo ""
 
