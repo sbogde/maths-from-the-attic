@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <circle cx="8" cy="8" r="2.5" fill="#2c3e50"/>
+  <circle cx="24" cy="8" r="2.5" fill="#2c3e50"/>
+  <circle cx="8" cy="24" r="2.5" fill="#3498db"/>
+  <circle cx="24" cy="24" r="2.5" fill="#3498db"/>
+  <path d="M 10 8 L 22 8" stroke="#2c3e50" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+  <path d="M 8 10 L 8 22" stroke="#2c3e50" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+  <path d="M 24 10 L 24 22" stroke="#3498db" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+  <path d="M 10 24 L 22 24" stroke="#3498db" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 6 3, 0 6" fill="#666"/>
+    </marker>
+  </defs>
+</svg>
