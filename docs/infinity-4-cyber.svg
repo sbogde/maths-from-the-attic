@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" fill="#0f0f0f" rx="80"/>
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <path d="M 70 256 Q 70 170 130 170 Q 190 170 230 256 Q 270 342 330 342 Q 390 342 442 256 Q 442 170 382 170 Q 322 170 282 256 Q 242 342 182 342 Q 122 342 70 256" fill="none" stroke="#00f0ff" stroke-width="18" stroke-linecap="round" filter="url(#glow)"/>
+  <circle cx="256" cy="256" r="4" fill="#00f0ff" filter="url(#glow)"/>
+</svg>

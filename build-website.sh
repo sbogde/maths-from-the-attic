@@ -89,13 +89,41 @@ $PANDOC_PATH "$LATEX_SOURCE" \
   --lua-filter=tikzcd-filter.lua \
   -o docs/index.html
 
-# Add favicon to HTML
-echo "Adding favicon..."
-sed -i.bak 's|</head>|  <link rel="icon" type="image/svg+xml" href="favicon.svg">\
-</head>|' docs/index.html
-rm docs/index.html.bak
+# Copy favicon
+echo "Setting up favicon and PWA assets..."
+cp docs/infinity-7-layered.svg docs/favicon.svg
 
-echo "✅ HTML generated: docs/index.html"
+# Generate PWA manifest
+cp manifest-template.json docs/manifest.json
+
+# Generate PWA icons from SVG
+python3 generate-pwa-icons.py
+
+# Copy service worker
+cp sw-template.js docs/sw.js
+
+# Add PWA meta tags and favicon to HTML
+echo "Adding PWA support to HTML..."
+sed -i.bak 's|</head>|  <link rel="icon" type="image/svg+xml" href="favicon.svg">\
+  <link rel="manifest" href="manifest.json">\
+  <meta name="theme-color" content="#2c3e50">\
+  <meta name="apple-mobile-web-app-capable" content="yes">\
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">\
+  <meta name="apple-mobile-web-app-title" content="Uniform Dimension">\
+  <link rel="apple-touch-icon" href="icon-192.png">\
+</head>|' docs/index.html
+
+# Add service worker registration before </body>
+sed -i.bak2 's|</body>|<script>\
+  if ("serviceWorker" in navigator) {\
+    navigator.serviceWorker.register("/sw.js")\
+      .then(reg => console.log("Service Worker registered", reg))\
+      .catch(err => console.log("Service Worker registration failed", err));\
+  }\
+</script>\
+</body>|' docs/index.html
+
+rm docs/index.html.bak docs/index.html.bak2
 echo ""
 
 # Clean up auxiliary files in the LaTeX source directory

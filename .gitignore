@@ -20,3 +20,9 @@
 
 # Don't ignore the docs folder (website output)
 !docs/
+
+# Keep PWA assets
+!docs/manifest.json
+!docs/sw.js
+!docs/icon-*.png
+!docs/favicon.svg
