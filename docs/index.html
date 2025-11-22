@@ -2439,6 +2439,109 @@ class="math inline">\(\bigcap_j Q_j = 0\)</span>.</p>
 <p>Applying the Kuros–Ore theorem gives <span
 class="math inline">\(m=n\)</span>. ◻</p>
 </div>
+<div class="definition">
+<p><strong>Definition 4.13</strong>. An <span
+class="math inline">\(R\)</span>-module <span
+class="math inline">\(M\)</span> is said to have <em>finite uniform
+(co-irreducible) dimension</em> if there exists a finite independent
+family <span class="math inline">\((N_i)_{i=1}^n\)</span> of uniform
+submodules of <span class="math inline">\(M\)</span> such that <span
+class="math display">\[\bigoplus_{i=1}^n N_i \trianglelefteq M.\]</span>
+In this case the integer <span class="math inline">\(n\)</span> is
+called the <em>uniform (co-irreducible) dimension</em> of <span
+class="math inline">\(M\)</span> and we write <span
+class="math inline">\(\dim M = n\)</span>.</p>
+</div>
+<div class="theorem">
+<p><strong>Theorem 4.14</strong>. <em>Let <span
+class="math inline">\(M\)</span> be an <span
+class="math inline">\(R\)</span>-module. The following statements are
+equivalent:</em></p>
+<ol>
+<li><p><em><span class="math inline">\(M\)</span> has finite uniform
+(co-irreducible) dimension.</em></p></li>
+<li><p><em><span class="math inline">\(M\)</span> satisfies the
+ascending chain condition for direct sums.</em></p></li>
+</ol>
+</div>
+<div class="proof">
+<p><em>Proof.</em> <em><span class="math inline">\((2) \Rightarrow
+(1)\)</span>.</em> Let <span
+class="math inline">\(\mathcal{S}&#39;\)</span> and <span
+class="math inline">\(\mathcal{S}\)</span> be two finite families of
+independent submodules of <span class="math inline">\(M\)</span>. We say
+that <span class="math inline">\(\mathcal{S}&#39;\)</span> is a
+<em>refinement</em> of <span class="math inline">\(\mathcal{S}\)</span>
+if every submodule in <span
+class="math inline">\(\mathcal{S}&#39;\)</span> is contained in some
+submodule from <span class="math inline">\(\mathcal{S}\)</span>. It is
+easy to check that refinement defines a partial order on the set of
+families of submodules of <span class="math inline">\(M\)</span>. Since
+<span class="math inline">\(M\)</span> satisfies (2), there exists a
+family <span class="math inline">\(\mathcal{S}_0\)</span> of independent
+submodules of <span class="math inline">\(M\)</span> which is maximal
+with respect to this order.</p>
+<p>Take <span class="math inline">\(N \in \mathcal{S}_0\)</span>. If
+<span class="math inline">\(N\)</span> is not uniform, then there exist
+non-zero submodules <span class="math inline">\(P,Q \leq N\)</span> with
+<span class="math inline">\(P \cap Q = 0\)</span>. From <span
+class="math inline">\(\mathcal{S}_0\)</span> we can then construct a
+proper refinement of <span class="math inline">\(\mathcal{S}_0\)</span>,
+a contradiction. Hence every submodule in <span
+class="math inline">\(\mathcal{S}_0\)</span> is uniform, so <span
+class="math inline">\(M\)</span> contains a uniform submodule. If <span
+class="math inline">\(L\)</span> is a non-zero submodule of <span
+class="math inline">\(M\)</span>, then <span
+class="math inline">\(L\)</span> also satisfies (2), and the same
+argument shows that <span class="math inline">\(L\)</span> contains a
+uniform submodule.</p>
+<p>Now let <span class="math display">\[S = \bigoplus_{i\in I}
+N_i\]</span> be a maximal direct sum of uniform submodules of <span
+class="math inline">\(M\)</span> and let <span class="math inline">\(N
+\leq M\)</span> be non-zero. Since <span
+class="math inline">\(M\)</span> satisfies the ascending chain condition
+on direct sums, the index set <span class="math inline">\(I\)</span> is
+finite. By Proposition 3.8 we have <span class="math inline">\(S \cap N
+\neq 0\)</span>, so <span class="math inline">\(S \trianglelefteq
+M\)</span>. By definition, <span class="math inline">\(M\)</span> has
+finite uniform dimension.</p>
+<p><em><span class="math inline">\((1) \Rightarrow (2)\)</span>.</em>
+Let <span class="math display">\[S = \bigoplus_{i=1}^n N_i\]</span> be a
+direct sum of uniform submodules with <span class="math inline">\(S
+\trianglelefteq M\)</span>. If <span class="math inline">\(N\)</span> is
+a non-zero submodule of <span class="math inline">\(M\)</span>, then
+<span class="math inline">\(S \cap N \neq 0\)</span>, and by Lemma 3.6
+the submodule <span class="math inline">\(N\)</span> contains a uniform
+submodule.</p>
+<p>Let <span class="math inline">\((L_j)_{j=1}^m\)</span> be an
+independent family of submodules of <span
+class="math inline">\(M\)</span>. From the previous paragraph, each
+<span class="math inline">\(L_j\)</span> contains a uniform submodule
+<span class="math inline">\(P_j\)</span>. Clearly, the family <span
+class="math inline">\((P_j)_{j=1}^m\)</span> is independent. By
+Theorem 3.12 we deduce <span class="math inline">\(m \leq n\)</span>.
+Thus every independent family of submodules has bounded finite length,
+which is equivalent to the ascending chain condition for direct
+sums. ◻</p>
+</div>
+<div class="remark">
+<p><em>Remark 4.15</em>. Let <span class="math inline">\(M\)</span> be
+an <span class="math inline">\(R\)</span>-module. Then:</p>
+<ol>
+<li><p>If <span class="math inline">\(N \trianglelefteq M\)</span>, then
+<span class="math inline">\(M\)</span> has finite uniform
+(co-irreducible) dimension if and only if <span
+class="math inline">\(N\)</span> has finite uniform dimension, and in
+this case <span class="math inline">\(\dim M = \dim N\)</span>.</p></li>
+<li><p>If <span class="math inline">\(M = \bigoplus_{i=1}^n
+N_i\)</span>, then <span class="math inline">\(M\)</span> has finite
+uniform dimension if and only if each <span
+class="math inline">\(N_i\)</span> has finite uniform dimension for all
+<span class="math inline">\(i = 1,\dots,n\)</span>. Moreover, <span
+class="math display">\[\dim M = \sum_{i=1}^n \dim N_i
+.\]</span></p></li>
+</ol>
+</div>
 <script>
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("/sw.js")
