@@ -77,6 +77,10 @@ else
 fi
 echo ""
 
+# Generate build timestamp for cache busting
+BUILD_TIMESTAMP=$(date +%s)
+echo "Build timestamp: $BUILD_TIMESTAMP"
+
 # Convert to HTML
 echo "Converting LaTeX to HTML with pandoc..."
 
@@ -104,7 +108,7 @@ cp sw-template.js docs/sw.js
 
 # Add PWA meta tags and favicon to HTML
 echo "Adding PWA support to HTML..."
-sed -i.bak 's|</head>|  <link rel="icon" type="image/svg+xml" href="favicon.svg">\
+sed -i.bak 's|</head>|  <link rel="icon" type="image/svg+xml" href="favicon.svg?v='"$BUILD_TIMESTAMP"'">\
   <link rel="manifest" href="manifest.json">\
   <meta name="theme-color" content="#2c3e50">\
   <meta name="apple-mobile-web-app-capable" content="yes">\
@@ -116,14 +120,17 @@ sed -i.bak 's|</head>|  <link rel="icon" type="image/svg+xml" href="favicon.svg"
 # Add service worker registration before </body>
 sed -i.bak2 's|</body>|<script>\
   if ("serviceWorker" in navigator) {\
-    navigator.serviceWorker.register("/sw.js")\
+    navigator.serviceWorker.register("/sw.js?v='"$BUILD_TIMESTAMP"'")\
       .then(reg => console.log("Service Worker registered", reg))\
       .catch(err => console.log("Service Worker registration failed", err));\
   }\
 </script>\
 </body>|' docs/index.html
 
-rm docs/index.html.bak docs/index.html.bak2
+# Add cache busting to CSS link
+sed -i.bak3 's|href="style.css"|href="style.css?v='"$BUILD_TIMESTAMP"'"|' docs/index.html
+
+rm docs/index.html.bak docs/index.html.bak2 docs/index.html.bak3
 echo ""
 
 # Clean up auxiliary files in the LaTeX source directory
