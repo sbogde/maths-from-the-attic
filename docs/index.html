@@ -25,11 +25,11 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="style.css?v=1763833826" />
+  <link rel="stylesheet" href="style.css?v=1763846323" />
   <script
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
   type="text/javascript"></script>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=1763833826">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=1763846323">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#2c3e50">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -76,6 +76,9 @@ id="toc-injective-envelopes">Injective envelopes</a></li>
 <li><a href="#direct-sums-of-uniform-co-irreducible-modules"
 id="toc-direct-sums-of-uniform-co-irreducible-modules">Direct Sums of
 Uniform (Co-irreducible) Modules</a></li>
+<li><a href="#ore-domains-and-goldie-rings"
+id="toc-ore-domains-and-goldie-rings">Ore domains and Goldie
+rings</a></li>
 </ul>
 </nav>
 <h1 id="generalities">Generalities</h1>
@@ -2542,9 +2545,302 @@ class="math display">\[\dim M = \sum_{i=1}^n \dim N_i
 .\]</span></p></li>
 </ol>
 </div>
+<h1 id="ore-domains-and-goldie-rings">Ore domains and Goldie rings</h1>
+<div class="definition">
+<p><strong>Definition 5.1</strong>. An integral domain <span
+class="math inline">\(D\)</span> is called a <em>right Ore domain</em>
+(respectively a left Ore domain) if <span class="math inline">\(aD \cap
+bD \neq 0\)</span> (respectively <span class="math inline">\(Da \cap Db
+\neq 0\)</span>) for all <span class="math inline">\(a,b \in D \setminus
+\{0\}\)</span>.</p>
+</div>
+<div class="proposition">
+<p><strong>Proposition 5.2</strong>. <em>Let <span
+class="math inline">\(D\)</span> be an integral domain. Then <span
+class="math inline">\(D\)</span> is a right Ore domain if and only if
+<span class="math inline">\(D\)</span> contains a uniform right ideal.
+In particular, this condition holds whenever <span
+class="math inline">\(D\)</span> satisfies the ascending chain condition
+on direct sums of right ideals.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> “<span class="math inline">\(\Rightarrow\)</span>” If
+<span class="math inline">\(D\)</span> is a right Ore domain, then the
+right module <span class="math inline">\(D_D\)</span> is uniform.</p>
+<p>“<span class="math inline">\(\Leftarrow\)</span>” Let <span
+class="math inline">\(X\)</span> be a uniform right ideal of <span
+class="math inline">\(D\)</span> and <span class="math inline">\(x \in X
+\setminus \{0\}\)</span>. Consider the map <span
+class="math display">\[\varphi_x : D_D \longrightarrow X, \qquad
+\varphi_x(a) = xa .\]</span> This is an injective homomorphism of right
+<span class="math inline">\(D\)</span>-modules. Hence <span
+class="math inline">\(D_D\)</span> is uniform and therefore <span
+class="math inline">\(D\)</span> is a right Ore domain. ◻</p>
+</div>
+<div class="example">
+<p><strong>Example 5.3</strong>. Let <span
+class="math inline">\(K\)</span> be a commutative field and <span
+class="math inline">\(y\)</span> an indeterminate. Let <span
+class="math inline">\(K(y)\)</span> be the field of fractions of the
+polynomial ring <span class="math inline">\(K[y]\)</span>. If <span
+class="math inline">\(x\)</span> is another indeterminate, we consider
+<span class="math inline">\(K(y)[x]\)</span>, the set of polynomials in
+the indeterminate <span class="math inline">\(x\)</span> with
+coefficients in <span class="math inline">\(K(y)\)</span>. On this set
+we define two operations: addition is the usual addition of polynomials,
+and multiplication in <span class="math inline">\(K(y)[x]\)</span> is
+defined by the commutation rule <span class="math display">\[x f(y) =
+f(y^{2})x, \qquad f \in K(y).\]</span> It is straightforward to check
+that <span class="math inline">\(K(y)[x]\)</span> with these two
+operations is a unital ring. We write <span class="math inline">\(A =
+K(y)[x]\)</span>. Then <span class="math inline">\(A\)</span> is a
+non-commutative integral domain.</p>
+<p>Every element of <span class="math inline">\(A\)</span> can be
+written uniquely in the form <span class="math display">\[P(x) =
+f_{n}(y)x^{n} + f_{n-1}(y)x^{n-1} + \dots + f_{1}(y)x +
+f_{0}(y),\]</span> where <span class="math inline">\(n\)</span> is a
+natural number, <span class="math inline">\(f_{0}(y), f_{1}(y), \dots,
+f_{n}(y) \in K(y)\)</span> and <span class="math inline">\(f_{n}(y) \neq
+0\)</span>. We set <span class="math inline">\(\deg P(x) =
+n\)</span>.</p>
+<p>If <span class="math inline">\(P(x), Q(x) \in A\)</span> with <span
+class="math inline">\(Q(x) \neq 0\)</span>, then there exist <span
+class="math inline">\(S(x), R(x) \in A\)</span> such that <span
+class="math display">\[P(x) = S(x)Q(x) + R(x)
+\tag{\(*\)}\]</span> with either <span class="math inline">\(R(x) =
+0\)</span> or <span class="math inline">\(\deg R(x) &lt; \deg
+Q(x)\)</span>. From <span class="math inline">\((*)\)</span> it follows
+that <span class="math inline">\(A\)</span> is a left principal ideal
+ring. Hence <span class="math inline">\(A\)</span> satisfies the
+ascending chain condition on direct sums of left ideals, and therefore
+<span class="math inline">\(A\)</span> is a left Ore domain.</p>
+<p>We now show that <span class="math inline">\(xA \cap yA = 0\)</span>.
+Let <span class="math inline">\(\alpha \in xA \cap yA\)</span>. Then
+<span class="math display">\[\alpha = x\bigl(f_{n}(y)x^{n} + \dots +
+f_{0}(y)\bigr)
+       = yx\bigl(g_{m}(y)x^{m} + \dots + g_{0}(y)\bigr),\]</span> so
+that <span class="math display">\[f_{n}(y^{2})x^{n+1} + \dots +
+f_{0}(y^{2})x
+= y\bigl(g_{m}(y^{2})x^{m+1} + \dots + g_{0}(y^{2})x\bigr),\]</span> and
+hence <span class="math inline">\(m = n\)</span>. Thus <span
+class="math display">\[f_{n}(y^{2}) = y g_{m}(y^{2}), \dots,
+f_{0}(y^{2}) = y g_{0}(y^{2}),\]</span> which holds if and only if <span
+class="math inline">\(f_{n}(y) = \dots = f_{1}(y) = f_{0}(y) =
+0\)</span>, and therefore <span class="math inline">\(\alpha =
+0\)</span>. Consequently, <span class="math inline">\(A\)</span> is not
+a right Ore domain.</p>
+</div>
+<div class="center">
+<p><strong>GOLDIE RINGS</strong></p>
+</div>
+<div class="definition">
+<p><strong>Definition 5.4</strong>. A right (respectively left) ideal
+<span class="math inline">\(I\)</span> is called a <em>right annihilator
+ideal</em> (respectively a left annihilator ideal) if there exists a
+non-empty subset <span class="math inline">\(X\)</span> of <span
+class="math inline">\(R\)</span> such that <span class="math inline">\(I
+= \operatorname{ann}_{r}(X)\)</span> (respectively <span
+class="math inline">\(I = \operatorname{ann}_{l}(X)\)</span>).</p>
+<p>A ring <span class="math inline">\(R\)</span> is called a <em>right
+Goldie ring</em> if <span class="math inline">\(R\)</span> satisfies the
+ascending chain condition on right annihilator ideals and there is no
+infinite direct sum of non-zero right ideals in <span
+class="math inline">\(R\)</span>.</p>
+</div>
+<div class="example">
+<p><strong>Example 5.5</strong>. </p>
+<ol>
+<li><p>If <span class="math inline">\(R\)</span> is right noetherian,
+then <span class="math inline">\(R\)</span> is a right Goldie ring. In
+particular, <span class="math inline">\(\mathbb{Z}\)</span> is a Goldie
+ring.</p></li>
+<li><p>If <span class="math inline">\(R\)</span> is an integral domain,
+then <span class="math inline">\(R\)</span> is a right Goldie ring if
+and only if <span class="math inline">\(R\)</span> is a right Ore
+domain.</p></li>
+<li><p>From Example 4.3 it follows that there exist rings which are
+Goldie on the left but not on the right.</p></li>
+</ol>
+</div>
+<div class="proposition">
+<p><strong>Proposition 5.6</strong>. <em>Let <span
+class="math inline">\(R\)</span> be a ring. Then <span
+class="math inline">\(R\)</span> satisfies the ascending chain condition
+on right (respectively left) annihilator ideals if and only if <span
+class="math inline">\(R\)</span> satisfies the descending chain
+condition for left (respectively right) annihilator ideals.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> “<span class="math inline">\(\Rightarrow\)</span>”
+Let <span class="math inline">\(I_1 \supseteq I_2 \supseteq \dots
+\supseteq I_n \supseteq \dots\)</span> be a descending sequence of left
+annihilator ideals. For each <span class="math inline">\(j \geq
+1\)</span> there exists a non-empty subset <span
+class="math inline">\(X_j \subseteq R\)</span> such that <span
+class="math inline">\(I_j = \operatorname{ann}_\ell(X_j)\)</span>.</p>
+<p>We thus obtain an ascending sequence of right annihilator ideals
+<span class="math display">\[\operatorname{ann}_r(I_1) \subseteq
+\operatorname{ann}_r(I_2) \subseteq
+  \dots \subseteq \operatorname{ann}_r(I_n) \subseteq \dots .\]</span>
+Hence there exists <span class="math inline">\(m \geq 1\)</span> such
+that <span class="math inline">\(\operatorname{ann}_r(I_m) =
+\operatorname{ann}_r(I_{m+k})\)</span> for all <span
+class="math inline">\(k \geq 1\)</span>. It follows that <span
+class="math display">\[\operatorname{ann}_\ell(\operatorname{ann}_r(I_m))
+  = \operatorname{ann}_\ell(\operatorname{ann}_r(I_{m+k}))
+  \quad \text{for all } k \geq 1,\]</span> that is, <span
+class="math inline">\(I_m = I_{m+k}\)</span> for all <span
+class="math inline">\(k \geq 1\)</span>.</p>
+<p>Using the relations <span
+class="math inline">\(\operatorname{ann}_\ell(\operatorname{ann}_r(\operatorname{ann}_\ell(X)))
+= \operatorname{ann}_\ell(X)\)</span> and <span
+class="math inline">\(\operatorname{ann}_r(Y) \subseteq
+\operatorname{ann}_r(X)\)</span> whenever <span class="math inline">\(X
+\subseteq Y\)</span>, the converse implication “<span
+class="math inline">\(\Leftarrow\)</span>” is proved in the same
+way. ◻</p>
+</div>
+<div class="proposition">
+<p><strong>Proposition 5.7</strong>. <em>Let <span
+class="math inline">\(R\)</span> be a semiprime ring which satisfies the
+ascending chain condition on right annihilator ideals. If <span
+class="math inline">\(I\)</span> and <span
+class="math inline">\(J\)</span> are right ideals with <span
+class="math inline">\(I \subseteq J\)</span>, then there exists an
+element <span class="math inline">\(b \in R\)</span> such that <span
+class="math inline">\(bJ \neq 0\)</span> and <span
+class="math inline">\(bJ \cap I = 0\)</span>.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> By the preceding lemma there exists a minimal element
+<span class="math inline">\(a\)</span> in the set of left annihilator
+ideals such that <span class="math inline">\(\operatorname{ann}_\ell(J)
+\subseteq \operatorname{ann}_\ell(I)\)</span>. Then <span
+class="math inline">\(aJ \neq 0\)</span>; since <span
+class="math inline">\(R\)</span> is semiprime we have <span
+class="math inline">\(aJ \cdot aJ \neq 0\)</span>, so there exist <span
+class="math inline">\(x \in J\)</span> and <span class="math inline">\(a
+\in aJ\)</span> with <span class="math inline">\(b = x a\)</span> such
+that <span class="math inline">\(x a J \neq 0\)</span>. Clearly <span
+class="math inline">\(bJ \neq 0\)</span>.</p>
+<p>It remains to show that <span class="math inline">\(bJ \cap I =
+0\)</span>. Take <span class="math inline">\(\lambda \in bJ \cap
+I\)</span>; then <span class="math inline">\(\lambda = b\mu = x a \mu
+\in I\)</span> for some <span class="math inline">\(\mu \in J\)</span>.
+Since <span class="math inline">\(\operatorname{ann}_\ell(J) \subseteq
+\operatorname{ann}_\ell(\lambda)\)</span>, we obtain <span
+class="math display">\[\operatorname{ann}_\ell(J) \subseteq
+\operatorname{ann}_\ell(\lambda)
+  \subseteq \operatorname{ann}_\ell(\mu).\]</span> Because <span
+class="math inline">\(a \in aJ \subseteq aR\)</span>, we have <span
+class="math display">\[\begin{equation}
+\label{eq:4.7-1-en}
+  x a \in a \quad\text{and hence}\quad x a J \subseteq aJ .
+\end{equation}\]</span></p>
+<p>On the other hand, <span class="math inline">\(x a J \subseteq
+I\)</span>, while <span class="math inline">\(\lambda \in I\)</span> and
+<span class="math inline">\(a \subseteq
+\operatorname{ann}_r(I)\)</span>; therefore <span
+class="math display">\[\begin{equation}
+\label{eq:4.7-2-en}
+  a \subseteq \operatorname{ann}_\ell(\mu).
+\end{equation}\]</span> Since <span class="math inline">\(x a J \neq
+0\)</span>, we also have <span class="math display">\[\begin{equation}
+\label{eq:4.7-3-en}
+  a \nsubseteq \operatorname{ann}_\ell(J).
+\end{equation}\]</span></p>
+<p>From <a href="#eq:4.7-1-en" data-reference-type="eqref"
+data-reference="eq:4.7-1-en">[eq:4.7-1-en]</a>, <a href="#eq:4.7-2-en"
+data-reference-type="eqref"
+data-reference="eq:4.7-2-en">[eq:4.7-2-en]</a> and <a
+href="#eq:4.7-3-en" data-reference-type="eqref"
+data-reference="eq:4.7-3-en">[eq:4.7-3-en]</a> we obtain <span
+class="math inline">\(\operatorname{ann}_\ell(J) \subseteq
+\operatorname{ann}_\ell(\mu) \cap a\)</span>. If <span
+class="math inline">\(\lambda \neq 0\)</span>, then <span
+class="math inline">\(x a \mu \notin
+\operatorname{ann}_\ell(\mu)\)</span>, and, since <span
+class="math inline">\(x a \in a\)</span>, it follows that <span
+class="math inline">\(x a \mu \neq 0\)</span>, contradicting the
+minimality of <span class="math inline">\(a\)</span>. Thus <span
+class="math inline">\(\lambda = 0\)</span>, and hence <span
+class="math inline">\(bJ \cap I = 0\)</span>. ◻</p>
+</div>
+<div class="corollary">
+<p><strong>Corollary 5.8</strong>. <em>If <span
+class="math inline">\(R\)</span> is a right Goldie semiprime ring, then
+<span class="math inline">\(R\)</span> satisfies the descending chain
+condition on right annihilator ideals.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Assume that there exists a strictly descending
+sequence of right annihilator ideals <span class="math display">\[I_1
+\supset I_2 \supset \dots \supset I_n \supset \dots .\]</span> Then for
+every <span class="math inline">\(n \geq 1\)</span> we have <span
+class="math inline">\(\operatorname{ann}_\ell(I_n) \neq
+\operatorname{ann}_\ell(I_{n+1})\)</span>. By Proposition 4.7, for each
+<span class="math inline">\(n \geq 1\)</span> there exists a right ideal
+<span class="math inline">\(K_n\)</span> such that <span
+class="math inline">\(K_n \subseteq I_n\)</span> and <span
+class="math inline">\(K_n \cap I_{n+1} \neq 0\)</span>. Hence the sum
+<span class="math inline">\(\sum_{n \geq 1} K_n\)</span> is an infinite
+direct sum of non-zero right ideals, which contradicts the right Goldie
+property of <span class="math inline">\(R\)</span>. ◻</p>
+</div>
+<div class="proposition">
+<p><strong>Proposition 5.9</strong>. <em>Let <span
+class="math inline">\(R\)</span> be a semiprime ring which satisfies the
+ascending chain condition on right annihilator ideals. If <span
+class="math inline">\(x, y \in R\)</span> are such that <span
+class="math inline">\(xR\)</span> and <span
+class="math inline">\(yR\)</span> are essential in <span
+class="math inline">\(R_R\)</span>, then <span
+class="math inline">\(xyR\)</span> is essential.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Let <span class="math inline">\(I \leq R_R\)</span>
+with <span class="math inline">\(I \neq 0\)</span>. Define <span
+class="math display">\[J = \{ I : x \} = \{ a \in R \mid xa \in I
+\}.\]</span> Then <span class="math inline">\(J\)</span> is a right
+ideal of <span class="math inline">\(R\)</span>, and <span
+class="math inline">\(xJ = xR \cap I \neq 0\)</span> because <span
+class="math inline">\(xR \unlhd R_R\)</span>. Since <span
+class="math inline">\(\operatorname{ann}_r(x) \subseteq J\)</span>,
+<span class="math inline">\(xJ \neq 0\)</span> and <span
+class="math inline">\(\operatorname{ann}_\ell(x) = 0\)</span>, we obtain
+<span class="math display">\[\operatorname{ann}_\ell(J) \subseteq
+  \operatorname{ann}_\ell(\operatorname{ann}_r(x)).\]</span> By
+Proposition 4.7 there exists a right ideal <span class="math inline">\(K
+\neq 0\)</span> such that <span class="math inline">\(K \subseteq
+J\)</span> and <span class="math inline">\(K \cap
+\operatorname{ann}_r(x) = 0\)</span>.</p>
+<p>Now set <span class="math display">\[L = \{ K : y \} = \{ a \in R
+\mid ya \in K \}.\]</span> Since <span class="math inline">\(yR \unlhd
+R_R\)</span>, we have <span class="math inline">\(yL = yR \cap K \neq
+0\)</span>. If <span class="math inline">\(xyL = 0\)</span>, then <span
+class="math inline">\(yL \subseteq \operatorname{ann}_r(x)\)</span> and
+hence <span class="math inline">\(yL \subseteq \operatorname{ann}_r(x)
+\cap K = 0\)</span>, a contradiction. Thus <span
+class="math inline">\(xyL \neq 0\)</span>.</p>
+<p>Because <span class="math inline">\(xyL \subseteq xK \subseteq xJ
+\subseteq xR \cap I\)</span>, it follows that <span
+class="math inline">\(0 \neq xyL \subseteq xyR \cap I\)</span>, showing
+that <span class="math inline">\(xyR \unlhd R_R\)</span>. ◻</p>
+</div>
+<div class="proposition">
+<p><strong>Proposition 5.10</strong>. <em>Let <span
+class="math inline">\(R\)</span> be a ring which satisfies the ascending
+chain condition on right annihilator ideals. Then, for every <span
+class="math inline">\(a \in R\)</span> there exists an integer <span
+class="math inline">\(k \geq 0\)</span> such that <span
+class="math display">\[\operatorname{ann}_r(a^n) =
+\operatorname{ann}_r(a^m)
+  \quad \text{for all } n \geq 0 \text{ and } m \geq k
+.\]</span></em></p>
+</div>
 <script>
   if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("/sw.js?v=1763833826")
+    navigator.serviceWorker.register("/sw.js?v=1763846323")
       .then(reg => console.log("Service Worker registered", reg))
       .catch(err => console.log("Service Worker registration failed", err));
   }
