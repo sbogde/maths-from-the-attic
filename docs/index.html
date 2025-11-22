@@ -2194,6 +2194,251 @@ class="math inline">\(M\)</span> is uniform.</em></p></li>
 class="math inline">\(M\)</span> is uniform.</em></p></li>
 </ol>
 </div>
+<div class="proof">
+<p><em>Proof.</em> 1) This follows immediately from 3.1.</p>
+<p>2) Let <span class="math inline">\(M \trianglelefteq E\)</span> be an
+essential extension of <span class="math inline">\(M\)</span>. If <span
+class="math inline">\(E_1,E_2\)</span> are non-zero submodules of <span
+class="math inline">\(E\)</span>, then <span class="math inline">\(M
+\cap E_1 \neq 0\)</span> and <span class="math inline">\(M \cap E_2 \neq
+0\)</span>, hence <span class="math display">\[(M \cap E_1) \cap (M \cap
+E_2) \neq 0,\]</span> and therefore <span class="math inline">\(E_1 \cap
+E_2 \neq 0\)</span>. Thus <span class="math inline">\(E\)</span> is
+uniform. ◻</p>
+</div>
+<div class="lemma">
+<p><strong>Lemma 4.6</strong>. <em>Let <span
+class="math inline">\(M\)</span> be an <span
+class="math inline">\(R\)</span>-module and <span
+class="math inline">\((M_\alpha)_{\alpha \in \Lambda}\)</span> a family
+of independent submodules. If <span class="math inline">\(N\)</span> is
+a submodule of <span class="math inline">\(M\)</span> such that <span
+class="math display">\[N \cap \Bigl(\sum_{\alpha \in \Lambda}
+M_\alpha\Bigr) \neq 0,\]</span> then there exists a non-zero submodule
+of some <span class="math inline">\(M_\alpha\)</span> that is isomorphic
+to a submodule of <span class="math inline">\(N\)</span>.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> If <span
+class="math inline">\(\operatorname{Card}\Lambda = 1\)</span>, the
+statement is clear.</p>
+<p>If <span class="math inline">\(\operatorname{Card}\Lambda =
+2\)</span>, set <span class="math inline">\(P = N \cap (M_1 +
+M_2)\)</span>. If <span class="math inline">\(N \cap M_1 = 0\)</span>,
+then <span class="math inline">\(P \cong (P + M_1)/M_1\)</span> and
+<span class="math display">\[(P + M_1)/M_1 \leq (M_1 + M_2)/M_1 \cong
+M_2.\]</span> Hence <span class="math inline">\(P\)</span> is isomorphic
+to a submodule of <span class="math inline">\(M_2\)</span>. If <span
+class="math inline">\(\Lambda\)</span> is finite, arguing by induction
+reduces the proof to this case.</p>
+<p>If <span class="math inline">\(\Lambda\)</span> is infinite, choose
+<span class="math inline">\(x \in N \cap \bigl(\sum_{\alpha \in \Lambda}
+M_\alpha\bigr)\)</span>, <span class="math inline">\(x \neq 0\)</span>.
+Then there exist <span class="math inline">\(\alpha_1,\ldots,\alpha_n
+\in \Lambda\)</span> such that <span class="math display">\[xR \cap
+(M_{\alpha_1} + M_{\alpha_2} + \cdots + M_{\alpha_n}) \neq 0,\]</span>
+and we are reduced to the case where <span
+class="math inline">\(\Lambda\)</span> is finite. ◻</p>
+</div>
+<div class="remark">
+<p><em>Remark 4.7</em>. Let <span class="math inline">\(M\)</span> be a
+right <span class="math inline">\(R\)</span>-module and let <span
+class="math inline">\(\Omega\)</span> be the set of uniform submodules
+of <span class="math inline">\(M\)</span>. It may happen that <span
+class="math inline">\(\Omega = \emptyset\)</span>. Set <span
+class="math display">\[\mathcal{S} = \bigl\{\Omega&#39; \subseteq \Omega
+\,\bigm|\, \sum_{N \in \Omega&#39;}
+N \text{ is a direct sum} \bigr\}.\]</span> The partially ordered set
+<span class="math inline">\((\mathcal{S},\subseteq)\)</span> is
+inductive and, by Zorn’s lemma, <span
+class="math inline">\(\mathcal{S}\)</span> has a maximal element <span
+class="math inline">\(\Omega_0\)</span>. Put <span
+class="math inline">\(S = \bigoplus_{N \in \Omega_0} N\)</span>. We say
+that <span class="math inline">\(S\)</span> is a maximal direct sum of
+uniform submodules of <span class="math inline">\(M\)</span>.</p>
+</div>
+<div class="proposition">
+<p><strong>Proposition 4.8</strong>. <em>Let <span
+class="math inline">\(M\)</span> be an <span
+class="math inline">\(R\)</span>-module and <span
+class="math inline">\(S\)</span> a maximal direct sum of uniform
+submodules of <span class="math inline">\(M\)</span>. If <span
+class="math inline">\(N\)</span> is a non-zero submodule of <span
+class="math inline">\(M\)</span>, then the following statements are
+equivalent:</em></p>
+<ol>
+<li><p><em><span class="math inline">\(S \cap N \neq
+0\)</span>;</em></p></li>
+<li><p><em><span class="math inline">\(N\)</span> contains a uniform
+submodule.</em></p></li>
+</ol>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Implication <span
+class="math inline">\((1)\Rightarrow(2)\)</span> follows from
+Lemma 3.6.</p>
+<p>Implication <span class="math inline">\((2)\Rightarrow(1)\)</span>
+follows from the maximality of <span
+class="math inline">\(S\)</span>. ◻</p>
+</div>
+<div class="theorem">
+<p><strong>Theorem 4.9</strong>. <em>Let <span
+class="math inline">\(M\)</span> be an <span
+class="math inline">\(R\)</span>-module and <span
+class="math inline">\(S\)</span> a maximal direct sum of uniform
+submodules of <span class="math inline">\(M\)</span>. There exists a
+submodule <span class="math inline">\(K\)</span>, maximal among the
+submodules of <span class="math inline">\(M\)</span> that contain no
+uniform submodule, with the properties:</em></p>
+<ol>
+<li><p><em><span class="math inline">\(S + K\)</span> is a direct
+sum;</em></p></li>
+<li><p><em><span class="math inline">\((S \oplus K) \trianglelefteq
+M\)</span>.</em></p></li>
+</ol>
+</div>
+<div class="proof">
+<p><em>Proof.</em></p>
+<ol>
+<li><p>Let <span class="math display">\[\mathcal{S} = \{\,L \leq M \mid
+\forall L&#39; \leq L,\; L&#39; \text{ is not
+uniform}\,\}.\]</span> Then <span class="math inline">\(\mathcal{S} \neq
+\emptyset\)</span> because <span class="math inline">\(0 \in
+\mathcal{S}\)</span> and <span
+class="math inline">\(\mathcal{S}\)</span> is inductive. By Zorn’s
+lemma, <span class="math inline">\(\mathcal{S}\)</span> has a maximal
+element <span class="math inline">\(K\)</span>. By Proposition 3.8 we
+have <span class="math inline">\(S \cap K = 0\)</span>.</p></li>
+<li><p>Suppose <span class="math inline">\(N \cap (S \oplus K) =
+0\)</span>, where <span class="math inline">\(N\)</span> is a non-zero
+submodule of <span class="math inline">\(M\)</span>. Then <span
+class="math inline">\((N + K) \cap S = 0\)</span>, and by
+Proposition 3.8, <span class="math inline">\(N + K\)</span> contains no
+uniform submodule, which contradicts the maximality of <span
+class="math inline">\(K\)</span>. Hence <span class="math inline">\((S
+\oplus K) \trianglelefteq M\)</span>.</p></li>
+</ol>
+<p> ◻</p>
+</div>
+<div class="definition">
+<p><strong>Definition 4.10</strong>. Let <span
+class="math inline">\(M\)</span> be an <span
+class="math inline">\(R\)</span>-module. A finite intersection of
+submodules <span class="math display">\[\bigcap_{i \in I} N_i \qquad (I
+\text{ finite})\]</span> is called <em>reduced</em> if, for every <span
+class="math inline">\(i \in I\)</span>, we have <span
+class="math display">\[\bigcap_{i \in I} N_i \neq
+\bigcap_{\substack{j \in I \\ j \neq i}} N_j .\]</span></p>
+<p>It is clear that if we have a finite intersection <span
+class="math inline">\(N = \bigcap_{i \in I} N_i\)</span> of irreducible
+submodules, then it can always be written as a reduced intersection of
+irreducible submodules.</p>
+</div>
+<div class="theorem">
+<p><strong>Theorem 4.11</strong> (Kuros–Ore Theorem). <em>Let <span
+class="math inline">\(M\)</span> be an <span
+class="math inline">\(R\)</span>-module and <span
+class="math inline">\(N\)</span> a submodule of <span
+class="math inline">\(M\)</span>. Assume that <span
+class="math inline">\(N\)</span> has finite reduced intersections: <span
+class="math display">\[N = N_1 \cap N_2 \cap \dots \cap N_m = L_1 \cap
+L_2 \cap \dots \cap L_n,\]</span> where each <span
+class="math inline">\(N_i\)</span> and each <span
+class="math inline">\(L_j\)</span> is an irreducible submodule of <span
+class="math inline">\(M\)</span>. Then <span class="math inline">\(m =
+n\)</span>.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Let <span class="math inline">\(N_i&#39; = N_1 \cap
+\dots \cap N_{i-1} \cap N_{i+1} \cap \dots \cap N_m\)</span>. Then <span
+class="math inline">\(N \subseteq N_i&#39;\)</span> and <span
+class="math inline">\(N = N_i \cap N_i&#39;\)</span>. For each <span
+class="math inline">\(j\)</span>, set <span class="math inline">\(P_j =
+N_i \cap L_j\)</span>. Then <span class="math display">\[N \subseteq P_j
+\subseteq N_i&#39; \quad\text{and}\quad P_j \subseteq L_j.\]</span>
+Hence <span class="math display">\[N \subseteq \bigcap_{j=1}^n P_j
+\subseteq \bigcap_{j=1}^n L_j = N,\]</span> so the intersection of the
+<span class="math inline">\(P_j\)</span> is exactly <span
+class="math inline">\(N\)</span>.</p>
+<p>Since <span class="math inline">\(N_i\)</span> is irreducible in
+<span class="math inline">\(M\)</span>, it is irreducible in <span
+class="math inline">\(N_i + N_i&#39;\)</span>, and therefore <span
+class="math display">\[\frac{N_i&#39;}{N_i&#39; \cap N_i} \cong
+\frac{N_i + N_i&#39;}{N_i}\]</span> is uniform (co-irreducible), showing
+that <span class="math inline">\(N\)</span> is irreducible in <span
+class="math inline">\(N_i&#39;\)</span>.</p>
+<p>Thus from <span class="math inline">\(N = \bigcap_{j=1}^n
+P_j\)</span>, there exists some <span class="math inline">\(j\)</span>
+with <span class="math inline">\(N = P_j = N_i \cap L_j\)</span>.</p>
+<p>Set <span class="math inline">\(I=\{1,\dots,m\}\)</span>, <span
+class="math inline">\(J=\{1,\dots,n\}\)</span>, and choose <span
+class="math inline">\(i_1\in I\)</span>. Then for some <span
+class="math inline">\(j_1\in J\)</span>, <span class="math display">\[N
+= L_{j_1} \cap \Bigl(\bigcap_{i\neq i_1} N_i\Bigr).\]</span></p>
+<p>Since the intersection is finite we may reduce it step by step,
+maintaining at each step at least one <span
+class="math inline">\(L_{j_k}\)</span> that does not disappear. We
+obtain a decreasing chain <span class="math display">\[J \supseteq J_1
+\supseteq \dots \supseteq J_r,\]</span> with <span
+class="math inline">\(r\le m\)</span>, such that for the final set <span
+class="math inline">\(J&#39;\subseteq J\)</span>, <span
+class="math display">\[N = \bigcap_{j\in J&#39;} L_j.\]</span></p>
+<p>Because the intersection <span class="math inline">\(L_1\cap\dots\cap
+L_n\)</span> is reduced, we must have <span
+class="math inline">\(J&#39;=J\)</span>. Since <span
+class="math inline">\(J&#39;\)</span> has at most <span
+class="math inline">\(r\)</span> elements, <span
+class="math inline">\(n\le r\le m\)</span>. A symmetric argument gives
+<span class="math inline">\(m\le n\)</span>. ◻</p>
+</div>
+<div class="theorem">
+<p><strong>Theorem 4.12</strong>. <em>Let <span
+class="math inline">\(M\)</span> be an <span
+class="math inline">\(R\)</span>-module and let <span
+class="math inline">\((N_i)_{i=1}^m\)</span> and <span
+class="math inline">\((L_j)_{j=1}^n\)</span> be two independent families
+of uniform (co-irreducible) submodules such that <span
+class="math display">\[\bigoplus_{i=1}^m N_i \subseteq M
+\quad\text{and}\quad
+\bigoplus_{j=1}^n L_j \subseteq M\]</span> are essential in <span
+class="math inline">\(M\)</span>. Then <span
+class="math inline">\(m=n\)</span>.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> For each <span class="math inline">\(k\)</span>, set
+<span class="math inline">\(N_k&#39;=\bigoplus_{i\ne k} N_i\)</span>.
+Then <span class="math inline">\(N_k\cap N_k&#39;=0\)</span>.</p>
+<p>Consider <span class="math display">\[\mathfrak{S}_k = \{P\le M \mid
+N_k\cap P=0 \text{ and } N_k\subseteq P\}.\]</span> This set is
+inductive, so by Zorn’s lemma it has a maximal element <span
+class="math inline">\(P_k\)</span>. If <span
+class="math inline">\(Q\subseteq Q&#39;\subseteq M\)</span> and <span
+class="math inline">\(P_k\subseteq Q\subseteq Q&#39;\)</span>, then the
+irreducibility of <span class="math inline">\(N_k\)</span> forces <span
+class="math inline">\(P_k=Q=Q&#39;\)</span>. Thus each <span
+class="math inline">\(P_k\)</span> is co-irreducible.</p>
+<p>For any <span class="math inline">\(k\)</span>, <span
+class="math display">\[N = \bigoplus_{k=1}^m N_k = N_k \oplus
+N_k&#39;.\]</span> By the modular law, <span
+class="math display">\[N\cap P_k = (N_k\oplus N_k&#39;)\cap P_k
+          = N_k + (N_k&#39;\cap P_k),\]</span> so <span
+class="math inline">\(N\cap P_k = N_k\)</span>. Hence <span
+class="math display">\[N \cap \bigcap_{k=1}^m P_k
+  = \bigcap_{k=1}^m (N\cap P_k)
+  = \bigcap_{k=1}^m N_k
+  = 0.\]</span></p>
+<p>But since <span class="math inline">\(N\)</span> is essential in
+<span class="math inline">\(M\)</span>, this implies <span
+class="math inline">\(\bigcap_{k=1}^m P_k = 0\)</span>.</p>
+<p>Moreover, <span class="math inline">\(N_i = \bigcap_{k\ne i}
+P_k\)</span>, so each such intersection is reduced.</p>
+<p>Repeating the argument for <span
+class="math inline">\((L_j)\)</span>, we obtain irreducible submodules
+<span class="math inline">\((Q_j)\)</span> with <span
+class="math inline">\(\bigcap_j Q_j = 0\)</span>.</p>
+<p>Applying the Kuros–Ore theorem gives <span
+class="math inline">\(m=n\)</span>. ◻</p>
+</div>
 <script>
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("/sw.js")
