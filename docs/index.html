@@ -25,7 +25,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="style.css?v=1763889909" />
+  <link rel="stylesheet" href="style.css?v=1763892766" />
   <script
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
   type="text/javascript"></script>
@@ -33,11 +33,11 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <meta name="build-timestamp" content="1763889909">
+  <meta name="build-timestamp" content="1763892766">
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=1763889909">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=1763892766">
   <!-- PWA Support -->
-  <link rel="manifest" href="manifest.json?v=1763889909">
+  <link rel="manifest" href="manifest.json?v=1763892766">
   <meta name="theme-color" content="#2c3e50">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -3178,11 +3178,144 @@ L.\]</span> Then <span class="math display">\[P_n \cap S
   = L \cap \left( \bigoplus_{i=1}^n S_i \right)
   = V \cap \left( \bigoplus_{i=1}^n S_i \right)
   = \bigoplus_{i=1}^n V_i,\]</span> and hence <span
-class="math inline">\(P_n \cap S = \bigoplus_{i=1}^n V_i\)</span>. ◻</p>
+class="math inline">\(P_n \cap S\)</span> is a finitely generated
+submodule of <span class="math inline">\(S\)</span>.</p>
+<p>It follows that <span class="math inline">\(P_n \cap S\)</span> is a
+direct summand of <span class="math inline">\(X\)</span>. Since <span
+class="math inline">\(S \trianglelefteq X_R\)</span>, we have <span
+class="math display">\[P_n := \left(\bigoplus_{i=1}^n D_i\right) \cap L
+\leq S
+\quad \text{for all } n \geq 1,\]</span> which shows that <span
+class="math inline">\(D \cap L \leq S\)</span>.</p>
+<p>Using the modular distributive law we obtain <span
+class="math display">\[\frac{D}{S} \cap \frac{L+S}{S}
+   = \frac{D \cap (L+S)}{S}
+   = \frac{S + D \cap L}{S}
+   = 0.\]</span> Since <span class="math inline">\(\dfrac{D}{S}
+\trianglelefteq\dfrac{E+S}{S}\)</span>, it follows that <span
+class="math inline">\(L+S = S\)</span>, hence <span
+class="math inline">\(L \leq S\)</span>. Thus <span
+class="math inline">\(L\)</span> is semisimple and, as <span
+class="math inline">\(V \trianglelefteq L\)</span>, we get <span
+class="math inline">\(V = L\)</span>, a contradiction. Therefore <span
+class="math inline">\(X/S\)</span> is not a CS-module. ◻</p>
+</div>
+<div id="thm:Osofsky-Smith-EN" class="theorem">
+<p><strong>Theorem 6.6</strong> (Osofsky–Smith Theorem). <em>Let <span
+class="math inline">\(R\)</span> be a ring and <span
+class="math inline">\(M\)</span> a cyclic <span
+class="math inline">\(R\)</span>-module such that <span
+class="math inline">\(mR\)</span> is a completely CS-module for every
+<span class="math inline">\(m \in M\)</span>. Then <span
+class="math inline">\(M\)</span> is a finite direct sum of uniform
+modules.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Every indecomposable CS-module is uniform, so it is
+enough to show that <span class="math inline">\(M\)</span> is a finite
+direct sum of indecomposable modules.</p>
+<p>Assume that <span class="math inline">\(M\)</span> does not admit
+such a decomposition. Then there exist submodules <span
+class="math display">\[M = A_1 \oplus B_1,
+\quad
+0 \neq A_1, B_1 \leq M,\]</span> with <span
+class="math inline">\(B_1\)</span> not a direct sum of indecomposable
+modules. Hence we can write <span class="math display">\[B_1 = A_2
+\oplus B_2,
+\quad
+0 \neq A_2, B_2 \leq B_1,\]</span> where <span
+class="math inline">\(B_2\)</span> is again not a direct sum of
+indecomposable modules.</p>
+<p>Iterating this construction we obtain <span class="math display">\[0
+\neq A_i, B_i \leq M \quad (i \geq 1)\]</span> with <span
+class="math display">\[M = A_1 \oplus \cdots \oplus A_n \oplus B_n
+\quad (n \geq 1)\]</span> and <span class="math display">\[A_{n+1}
+\oplus A_{n+2} \oplus \cdots \leq B_n
+\quad (n \geq 1).\]</span></p>
+<p>Since each <span class="math inline">\(A_i\)</span> is cyclic, choose
+for every <span class="math inline">\(i \geq 1\)</span> a maximal
+submodule <span class="math inline">\(C_i \leq A_i\)</span>. Set <span
+class="math display">\[C := \bigoplus_{i \geq 1} C_i,
+\qquad
+P := M/C,
+\qquad
+S := \bigoplus_{i \geq 1} \frac{A_i}{C_i}.\]</span> Then <span
+class="math inline">\(S\)</span> is a countably generated semisimple
+submodule of <span class="math inline">\(P\)</span>.</p>
+<p>For every <span class="math inline">\(n \geq 1\)</span>, by the
+modular distributive law we have <span class="math display">\[(A_1
+\oplus \cdots \oplus A_n \oplus C)
+  \cap (B_n + C)
+= C + (A_1 \oplus \cdots \oplus A_n) \cap B_n
+= C + \bigoplus_{k \geq n+1} C_k
+= C.\]</span> Hence <span class="math display">\[P = \frac{M}{C}
+  = \frac{A_1 \oplus \cdots \oplus A_n \oplus C}{C}
+    \oplus \frac{B_n + C}{C}
+  \quad \text{for all } n \geq 1.\]</span></p>
+<p>If <span class="math inline">\(T \leq S\)</span> is a finitely
+generated submodule, then for some <span class="math inline">\(n \geq
+1\)</span> we have <span class="math display">\[T = \frac{A_1 \oplus
+\cdots \oplus A_n + C}{C},\]</span> so every finitely generated
+submodule of <span class="math inline">\(S\)</span> is a direct summand
+of <span class="math inline">\(P\)</span>.</p>
+<p>Now let <span class="math inline">\(X\)</span> be a submodule of
+<span class="math inline">\(P\)</span> with <span
+class="math inline">\(S \trianglelefteq X \leq P\)</span> such that
+<span class="math inline">\(X\)</span> is CS and every finitely
+generated submodule of <span class="math inline">\(S\)</span> is a
+direct summand of <span class="math inline">\(X\)</span>. If <span
+class="math inline">\(\operatorname{soc}(X)\)</span> denotes the socle
+of <span class="math inline">\(X\)</span>, then <span
+class="math inline">\(S \trianglelefteq\operatorname{soc}(X)\)</span>,
+and since <span class="math inline">\(S \trianglelefteq X\)</span> we
+get <span class="math inline">\(S = \operatorname{soc}(X)\)</span>.</p>
+<p>Thus the hypotheses of the previous lemma are satisfied, so <span
+class="math inline">\(X/S\)</span> is not a CS-module, a
+contradiction. ◻</p>
+</div>
+<div class="corollary">
+<p><strong>Corollary 6.7</strong>. <em>Let <span
+class="math inline">\(R\)</span> be a ring such that every cyclic <span
+class="math inline">\(R\)</span>-module is a CS-module. Then every
+cyclic <span class="math inline">\(R\)</span>-module is a finite direct
+sum of uniform modules.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Let <span class="math inline">\(M_R\)</span> be a
+cyclic module, <span class="math inline">\(m \in M\)</span> and <span
+class="math inline">\(N \leq mR\)</span>. Then the factor module <span
+class="math inline">\(mR/N\)</span> is cyclic and, by hypothesis, a
+CS-module. By the Osofsky–Smith Theorem it follows that <span
+class="math inline">\(mR\)</span>, hence <span
+class="math inline">\(M\)</span>, is a finite direct sum of uniform
+modules. ◻</p>
+</div>
+<div class="corollary">
+<p><strong>Corollary 6.8</strong> (Corollary 5.8). <em>Let <span
+class="math inline">\(N\)</span> be an <span
+class="math inline">\(R\)</span>-module such that every factor module of
+every cyclic submodule of <span class="math inline">\(N\)</span> is
+injective. Then <span class="math inline">\(N\)</span> is
+semisimple.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Take <span class="math inline">\(0 \neq x \in
+N\)</span> and set <span class="math inline">\(C = xR \leq N\)</span>.
+By hypothesis, every factor module of a cyclic submodule of <span
+class="math inline">\(C\)</span> is injective; hence every cyclic
+submodule of <span class="math inline">\(C\)</span> is completely CS. By
+the Osofsky–Smith Theorem we have <span class="math display">\[C = xR =
+\bigoplus_{i=1}^n U_i\]</span> for certain uniform submodules <span
+class="math inline">\(U_i\)</span>.</p>
+<p>Since <span class="math display">\[U_i \cong C \big/ \bigoplus_{j
+\neq i} U_j,\]</span> each <span class="math inline">\(U_i\)</span> is
+injective and therefore indecomposable for all <span
+class="math inline">\(i = 1,\dots,n\)</span> (see
+Proposition 3.1). ◻</p>
 </div>
 <script>
   // Cache busting - force reload on version change
-  const buildTimestamp = 1763889909;
+  const buildTimestamp = 1763892766;
   const storedTimestamp = localStorage.getItem("buildTimestamp");
   if (storedTimestamp </body></body> storedTimestamp !== buildTimestamp) {
     console.log("New build detected - clearing cache");
