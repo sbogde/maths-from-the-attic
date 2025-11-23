@@ -106,10 +106,19 @@ python3 generate-pwa-icons.py
 # Copy service worker
 cp sw-template.js docs/sw.js
 
-# Add PWA meta tags and favicon to HTML
-echo "Adding PWA support to HTML..."
-sed -i.bak 's|</head>|  <link rel="icon" type="image/svg+xml" href="favicon.svg?v='"$BUILD_TIMESTAMP"'">\
-  <link rel="manifest" href="manifest.json">\
+# Add cache control, PWA meta tags and cache busting
+echo "Adding PWA support and cache control to HTML..."
+
+# First, add cache control meta tags and PWA tags in <head>
+sed -i.bak 's|</head>|  <!-- Cache Control -->\
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">\
+  <meta http-equiv="Pragma" content="no-cache">\
+  <meta http-equiv="Expires" content="0">\
+  <meta name="build-timestamp" content="'"$BUILD_TIMESTAMP"'">\
+  <!-- Favicon -->\
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v='"$BUILD_TIMESTAMP"'">\
+  <!-- PWA Support -->\
+  <link rel="manifest" href="manifest.json?v='"$BUILD_TIMESTAMP"'">\
   <meta name="theme-color" content="#2c3e50">\
   <meta name="apple-mobile-web-app-capable" content="yes">\
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">\
@@ -117,18 +126,32 @@ sed -i.bak 's|</head>|  <link rel="icon" type="image/svg+xml" href="favicon.svg?
   <link rel="apple-touch-icon" href="icon-192.png">\
 </head>|' docs/index.html
 
-# Add service worker registration before </body>
-sed -i.bak2 's|</body>|<script>\
+# Add cache busting to CSS link
+sed -i.bak2 's|href="style.css"|href="style.css?v='"$BUILD_TIMESTAMP"'"|' docs/index.html
+
+# Add service worker with cache busting before </body>
+sed -i.bak3 's|</body>|<script>\
+  // Cache busting - force reload on version change\
+  const buildTimestamp = '"$BUILD_TIMESTAMP"';\
+  const storedTimestamp = localStorage.getItem("buildTimestamp");\
+  if (storedTimestamp && storedTimestamp !== buildTimestamp) {\
+    console.log("New build detected - clearing cache");\
+    if ("caches" in window) {\
+      caches.keys().then(names => names.forEach(name => caches.delete(name)));\
+    }\
+    localStorage.setItem("buildTimestamp", buildTimestamp);\
+    location.reload(true);\
+  } else {\
+    localStorage.setItem("buildTimestamp", buildTimestamp);\
+  }\
+  // Service Worker registration\
   if ("serviceWorker" in navigator) {\
-    navigator.serviceWorker.register("/sw.js?v='"$BUILD_TIMESTAMP"'")\
+    navigator.serviceWorker.register("/sw.js?v=" + buildTimestamp)\
       .then(reg => console.log("Service Worker registered", reg))\
       .catch(err => console.log("Service Worker registration failed", err));\
   }\
 </script>\
 </body>|' docs/index.html
-
-# Add cache busting to CSS link
-sed -i.bak3 's|href="style.css"|href="style.css?v='"$BUILD_TIMESTAMP"'"|' docs/index.html
 
 rm docs/index.html.bak docs/index.html.bak2 docs/index.html.bak3
 echo ""
