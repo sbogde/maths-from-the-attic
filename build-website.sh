@@ -129,6 +129,15 @@ sed -i.bak 's|</head>|  <!-- Cache Control -->\
 # Add cache busting to CSS link
 sed -i.bak2 's|href="style.css"|href="style.css?v='"$BUILD_TIMESTAMP"'"|' docs/index.html
 
+# Add PDF download link after opening <body> tag
+sed -i.bak3 's|<body>|<body>\
+<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 1rem; text-align: center; margin: -2rem -2rem 2rem -2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">\
+  <a href="thesis.pdf" download style="color: white; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: rgba(255,255,255,0.2); border-radius: 8px; transition: all 0.3s; backdrop-filter: blur(10px);" onmouseover="this.style.background='"'"'rgba(255,255,255,0.3)'"'"'" onmouseout="this.style.background='"'"'rgba(255,255,255,0.2)'"'"'">\
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>\
+    Download PDF Thesis\
+  </a>\
+</div>|' docs/index.html
+
 # Add service worker with cache busting before </body>
 sed -i.bak3 's|</body>|<script>\
   // Cache busting - force reload on version change\
@@ -154,6 +163,7 @@ sed -i.bak3 's|</body>|<script>\
 </body>|' docs/index.html
 
 rm docs/index.html.bak docs/index.html.bak2 docs/index.html.bak3
+echo "✅ PWA support and PDF download link added"
 echo ""
 
 # Clean up auxiliary files in the LaTeX source directory
