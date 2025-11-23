@@ -139,11 +139,11 @@ sed -i.bak3 's|<body>|<body>\
 </div>|' docs/index.html
 
 # Add service worker with cache busting before </body>
-sed -i.bak3 's|</body>|<script>\
+sed -i.bak4 's|</body>|<script>\
   // Cache busting - force reload on version change\
   const buildTimestamp = '"$BUILD_TIMESTAMP"';\
   const storedTimestamp = localStorage.getItem("buildTimestamp");\
-  if (storedTimestamp && storedTimestamp !== buildTimestamp) {\
+  if (storedTimestamp \&\& storedTimestamp !== buildTimestamp) {\
     console.log("New build detected - clearing cache");\
     if ("caches" in window) {\
       caches.keys().then(names => names.forEach(name => caches.delete(name)));\
@@ -162,7 +162,7 @@ sed -i.bak3 's|</body>|<script>\
 </script>\
 </body>|' docs/index.html
 
-rm docs/index.html.bak docs/index.html.bak2 docs/index.html.bak3
+rm docs/index.html.bak docs/index.html.bak2 docs/index.html.bak3 docs/index.html.bak4
 echo "✅ PWA support and PDF download link added"
 echo ""
 
