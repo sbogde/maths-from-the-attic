@@ -25,7 +25,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="style.css?v=1764032286" />
+  <link rel="stylesheet" href="style.css?v=1764032534" />
   <script
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
   type="text/javascript"></script>
@@ -33,11 +33,11 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <meta name="build-timestamp" content="1764032286">
+  <meta name="build-timestamp" content="1764032534">
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=1764032286">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=1764032534">
   <!-- PWA Support -->
-  <link rel="manifest" href="manifest.json?v=1764032286">
+  <link rel="manifest" href="manifest.json?v=1764032534">
   <meta name="theme-color" content="#2c3e50">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -3778,19 +3778,16 @@ Academiei, 1983.</p>
 complement submodules direct summands”, <em>Journal of Algebra</em>,
 <strong>139</strong> (1991), 342–354.</p>
 <script>
-  // Cache busting - force reload on version change
-  const buildTimestamp = 1764032286;
+  // Cache busting - track version changes
+  const buildTimestamp = 1764032534;
   const storedTimestamp = localStorage.getItem("buildTimestamp");
   if (storedTimestamp && storedTimestamp !== buildTimestamp) {
-    console.log("New build detected - clearing cache");
+    console.log("New build detected (was: " + storedTimestamp + ", now: " + buildTimestamp + ") - cache will be cleared on next navigation");
     if ("caches" in window) {
       caches.keys().then(names => names.forEach(name => caches.delete(name)));
     }
-    localStorage.setItem("buildTimestamp", buildTimestamp);
-    location.reload(true);
-  } else {
-    localStorage.setItem("buildTimestamp", buildTimestamp);
   }
+  localStorage.setItem("buildTimestamp", buildTimestamp);
   // Service Worker registration
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("/sw.js?v=" + buildTimestamp)

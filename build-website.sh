@@ -140,19 +140,16 @@ sed -i.bak3 's|<body>|<body>\
 
 # Add service worker with cache busting before </body>
 sed -i.bak4 's|</body>|<script>\
-  // Cache busting - force reload on version change\
+  // Cache busting - track version changes\
   const buildTimestamp = '"$BUILD_TIMESTAMP"';\
   const storedTimestamp = localStorage.getItem("buildTimestamp");\
   if (storedTimestamp \&\& storedTimestamp !== buildTimestamp) {\
-    console.log("New build detected - clearing cache");\
+    console.log("New build detected (was: " + storedTimestamp + ", now: " + buildTimestamp + ") - cache will be cleared on next navigation");\
     if ("caches" in window) {\
       caches.keys().then(names => names.forEach(name => caches.delete(name)));\
     }\
-    localStorage.setItem("buildTimestamp", buildTimestamp);\
-    location.reload(true);\
-  } else {\
-    localStorage.setItem("buildTimestamp", buildTimestamp);\
   }\
+  localStorage.setItem("buildTimestamp", buildTimestamp);\
   // Service Worker registration\
   if ("serviceWorker" in navigator) {\
     navigator.serviceWorker.register("/sw.js?v=" + buildTimestamp)\
